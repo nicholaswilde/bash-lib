@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
