@@ -15,18 +15,30 @@ git submodule add https://github.com/nicholaswilde/libbash
 
 ```shell
 #!/bin/bash
-source ./libbash/logging
+
+# shellcheck source=/dev/null
+source ./libbash/init
+source "${LIBBASH_DIR}/logging"
 
 lb_infoln "infoln test"
 ```
 
-### :arrow_up: Update
+### :arrow_up:&nbsp; Update
 
 From the base dir with `libbash` submodule installed.
 
 ```shell
 git submodule update --remote
 ```
+
+---
+
+## :books:&nbsp; Libraries
+
+| lib       | Description             |
+|:---------:|:------------------------|
+| `logging` | A bash logging library  |
+| `init`    | Initialize `libbash`    |
 
 ---
 
