@@ -1,0 +1,162 @@
+#!/usr/bin/env bash
+# : "${BASH_LIB_DIR:?BASH_LIB_DIR must be set. Please source bash-lib/init before other scripts from bash-lib.}"
+
+# shellcheck source=/dev/null
+source ./init
+
+export LIBBASH_LOG_LEVEL=info
+
+#------------------------------ Private Functions ------------------------------
+
+function _lb_check_out(){
+  local out="${1}"
+  if [[ "${out}" =~ stdout|stderr ]]; then
+    return 0
+  else
+    printf "%s is not a valid output argument, it should be stdout|stderr\n" "${out}"
+    return 1
+  fi
+}
+
+function _lb_check_print(){
+  local print="${1}"
+  if [[ "${print}" =~ printf|echo ]]; then
+    return 0
+  else
+    printf "%s is not a valid print argument, it should be printf|echo\n" "${print}"
+    return 1
+  fi
+}
+
+function _lb_check_log_level(){
+  local level="${1}"
+  if [[ "${level}" =~ debug|info|warn|error|fatal ]]; then
+    return 0
+  else
+    printf "%s is not a valid LIBBASH_LOG_LEVEL, it should be debug|info|warn|error|fatal\n" "${level}"
+    return 1
+  fi
+}
+
+function _lb_log_msg(){
+  declare -A LIBBASH_LOG_LEVELS=( \
+    [debug]=1 \
+    [info]=2 \
+    [warn]=3 \
+    [error]=4 \
+    [fatal]=5 \
+  )
+  declare -A BASH_LIB_LOG_COLOURS=( \
+    [debug]="$(tput setaf 7)" \
+    [info]="$(tput setaf 6)" \
+    [warn]="$(tput setaf 3)" \
+    [error]="$(tput setaf 1)" \
+    [fatal]="$(tput setaf 7)" \
+  )
+  local bg_color
+  # Background color for fatal
+  bg_color=$(tput setab 1)
+  local normal
+  normal=$(tput sgr0)
+  
+  local runtime_log_level="${LIBBASH_LOG_LEVEL}"
+  local write_log_level="${1}"
+  local print="${2}"
+  local msg="${3}"
+  local out="${4:-stdout}"
+
+  # Check our input arguments
+  _lb_check_log_level "${runtime_log_level}"
+  _lb_check_log_level "${write_log_level}"
+  _lb_check_print "${print}"
+  _lb_check_out "${out}"
+
+  # Get the log level numbers
+  local runtime_level_num="${LIBBASH_LOG_LEVELS[${runtime_log_level}]}"
+  local write_level_num="${LIBBASH_LOG_LEVELS[${write_log_level}]}"
+
+  # Return if the write log level is lower than the runtime log level
+  if (( write_level_num < runtime_level_num )); then
+    return
+  fi
+  
+  # Convert to upper case
+  write_log_level_out="${write_log_level^^}"
+
+  # Truncate to 4 characters
+  write_log_level_out="${write_log_level_out::4}"
+
+  # Set color
+  write_log_level_out="${BASH_LIB_LOG_COLOURS[${write_log_level}]}${write_log_level_out}${normal}"
+
+  # Set fatal background color
+  if [[ "${write_log_level}" ==  "fatal" ]]; then
+    write_log_level_out="${bg_color}${write_log_level_out}${normal}"  
+  fi
+
+  # Get the date and time format
+  local date_time
+  date_time=$(date +"%Y-%m-%dT%H:%M:%S%:z")
+  
+  # Create the message  
+  message="${write_log_level_out}[${date_time}] ${msg}"
+
+  if [[ "${out}" == "stderr" ]]; then
+    if [[ "${print}" == "printf" ]]; then
+      # shellcheck disable=SC2059
+      printf "${message}" 1>&2
+    else
+      echo "${message}" 1>&2
+    fi
+
+  else
+    if [[ "${print}" == "printf" ]]; then
+      # shellcheck disable=SC2059
+      printf "${message}"
+    else
+      echo "${message}"
+    fi
+  fi
+}
+
+#------------------------------ Public Functions ------------------------------
+
+function lb_debugf(){
+  _lb_log_msg debug printf "${*}"
+}
+
+function lb_infof(){
+  _lb_log_msg info printf "${*}"
+}
+
+function lb_warnf(){
+  _lb_log_msg warn printf "${*}"
+}
+
+function lb_errorf(){
+  _lb_log_msg error printf "${*}"
+}
+
+function lb_fatalf(){
+  _lb_log_msg fatal printf "${*}"
+}
+
+function lb_debugln(){
+  _lb_log_msg debug echo "${*}"
+}
+
+function lb_infoln(){
+  _lb_log_msg info echo "${*}"
+}
+
+function lb_warnln(){
+  _lb_log_msg warn echo "${*}"
+}
+
+function lb_errorln(){
+  _lb_log_msg error echo "${*}"
+}
+
+function lb_fatalln(){
+  _lb_log_msg fatal echo "${*}"
+}
