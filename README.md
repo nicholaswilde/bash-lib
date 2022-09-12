@@ -1,4 +1,4 @@
-# bash-lib
+# libbash
 A library of common bash functions
 
 ---
@@ -8,23 +8,16 @@ A library of common bash functions
 ### :floppy_disk:&nbsp; Installation
 
 ```shell
-git submodule add git@github.com:nicholaswilde/bash-lib 
+git submodule add git@github.com:nicholaswilde/libbash 
 ```
 
 ### :gear:&nbsp; Usage
 
 ```shell
 #!/bin/bash
-# Initialize bash-lib
-. ./bash-lib/init
-# Source the git library
-. ${BASH_LIB_DIR}/git/lib
+source ./libbash/logging
 
-# Go down a few dirs
-mkdir -p a/b/c
-cd a/b/c
-# Determine the root of the current repo
-repo_root
+lb_infoln "infoln test"
 ```
 
 ---

@@ -1,34 +1,18 @@
 #!/usr/bin/env bash
 
-## Initialisation Functions for the
-## Conjurinc Bash Library
-
 if (( BASH_VERSINFO[0] < 4 )); then
-    echo "Bash Lib requires bash v4 or greater"
-    echo "Current Bash Version: ${BASH_VERSION}"
-    exit 1
+  printf "Bash Lib requires bash v4 or greater\n"
+  printf "Current Bash Version: %s\n" "${BASH_VERSION}"
+  exit 1
 fi
 
 # Shell Otions
 set -euo pipefail
 
-# This script should be sourced before any of
-# the other scripts in this repo. Other scripts
-# make use of ${BASH_LIB_DIR} to find each other.
-
 # Get the relative path to the repo root
 # shellcheck disable=SC2086
-BASH_LIB_DIR_RELATIVE="$(dirname ${BASH_SOURCE[0]})"
-
-# Must be set in order to load the filehandling
-# module. Will be updated when abs_path is available.
-BASH_LIB_DIR="${BASH_LIB_DIR_RELATIVE}"
-
-# Load the filehandling module for the abspath
-# function
-for lib in lib; do
-    . "${BASH_LIB_DIR_RELATIVE}/lib/${lib}"
-done
+BASH_LIB_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+export BASH_LIB_DIR
 
 # Filter functions and re export only bash-lib functions to subshells
-eval "$(declare -F | sed -e 's/-f /-fx /' | grep 'x bl_')"
+eval "$(declare -F | sed -e 's/-f /-fx /' | grep 'x lb_')"
