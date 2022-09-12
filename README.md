@@ -8,7 +8,7 @@ A library of common bash functions
 ### :floppy_disk:&nbsp; Installation
 
 ```shell
-git submodule add git@github.com:nicholaswilde/libbash 
+git submodule add https://github.com/nicholaswilde/libbash 
 ```
 
 ### :gear:&nbsp; Usage
@@ -18,6 +18,14 @@ git submodule add git@github.com:nicholaswilde/libbash
 source ./libbash/logging
 
 lb_infoln "infoln test"
+```
+
+### :arrow_up: Update
+
+From the base dir with `libbash` submodule installed.
+
+```shell
+git submodule update --remote
 ```
 
 ---
