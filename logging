@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# : "${BASH_LIB_DIR:?BASH_LIB_DIR must be set. Please source bash-lib/init before other scripts from bash-lib.}"
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
 
 # shellcheck source=/dev/null
-source ./init
+# source ./init
 
 export LIBBASH_LOG_LEVEL=info
 

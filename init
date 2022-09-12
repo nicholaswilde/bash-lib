@@ -11,8 +11,8 @@ set -euo pipefail
 
 # Get the relative path to the repo root
 # shellcheck disable=SC2086
-BASH_LIB_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-export BASH_LIB_DIR
+LIBBASH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+# export LIBBASH_DIR
 
 # Filter functions and re export only bash-lib functions to subshells
 eval "$(declare -F | sed -e 's/-f /-fx /' | grep 'x lb_')"
