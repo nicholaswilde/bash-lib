@@ -1,0 +1,12 @@
+#!/usr/bin/env bats
+
+setup() {
+  load "test-helper.bash"
+  source "${PROJECT_ROOT}/foo"
+}
+
+@test "lb_foo() bar" {
+  run lb_foo arg
+  assert_success
+  assert_failure
+}
