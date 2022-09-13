@@ -16,3 +16,13 @@ function lb_to_lower(){
 function lb_to_upper(){
   printf '%s\n' "${1^^}"
 }
+
+# Remove the last character
+function lb_rm_last_char(){
+  printf '%s\n' "${1::-1}"
+}
+
+# Get the last character
+function lb_get_last_char(){
+  printf '%s\n' "${1: -1}"
+}
