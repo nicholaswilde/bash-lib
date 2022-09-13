@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+# Convert string to lower case
+function lb_to_lower(){
+  printf '%s\n' "${1,,}"
+}
+
+# Convert string to upper case
+function lb_to_upper(){
+  printf '%s\n' "${1^^}"
+}

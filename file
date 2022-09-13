@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+# Remove file extension
+function lb_remove_extension() {
+  printf '%s\n' "${1%%.*}"
+}
+
+# Get file extension
+function lb_get_extension() {
+  printf '%s\n' "${1#*.}"
+}
+
+# Get the file name
+function lb_get_filename() {
+  basename "${1}"
+}
+
+# Get the directory
+function lb_get_dir_name() {
+  dirname "${1}"
+}
+
+# Get the absolute path
+function lb_get_abs_path(){
+  s=$(readlink -f "${1}")
+  printf '%s\n' "${s}"
+}
+
+function lb_get_mime_type(){
+  file -b --mime-type "${1}"
+}

@@ -36,9 +36,13 @@ git submodule update --remote
 ## :books:&nbsp; Libraries
 
 | lib       | Description             |
-|:---------:|:------------------------|
-| `logging` | A bash logging library  |
+|-----------|:------------------------|
+| `all`     | Import all libraries    |
+| `checks`  | All types of checks     |
+| `file`    | File related functions  |
 | `init`    | Initialize `libbash`    |
+| `logging` | A bash logging library  |
+| `str`     | String manipulation     |
 
 ---
 

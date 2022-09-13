@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+# Check if command exists
+function lb_command_exists(){
+  command -v "${1}" &> /dev/null
+}
+
+# Check if file exists
+function lb_file_exists(){
+  [ -f "{1}" ]
+}
+
+# Check is variable is null
+function lb_is_null {
+  [ -z "${1}" ]
+}
+
+# Checkifdir exists
+function lb_dir_exists() {
+  [ -d "${1}" ]
+}
