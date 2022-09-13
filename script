@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+LIBBASH_USAGE_MSG="[OPTIONS] ARGS"
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+# Show a usage message
+function lb_show_usage(){
+  printf "Usage: %s %s\n" "${1}" "${LIBBASH_USAGE_MSG}"
+}
+
+function lb_show_version(){
+  printf "%s version %s\n" "${1}" "${2}"
+  exit 0
+}
+
+function lb_usage_error() {
+  lb_show_usage "${1}"
+  printf "\nTry %s -h for more options.\n" "${1}" >&2
+  exit 1
+}

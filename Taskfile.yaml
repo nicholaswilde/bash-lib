@@ -3,32 +3,42 @@
 
 version: '3'
 
+vars:
+  BATS: ./test/bats/bin/bats
+
 tasks:
   update:
     desc: Update git submodules
     cmds:
-      - cd test
-      - git submodule update --init --recursive --remote
-  new-test:
-    desc: Create a new TEST from template
-    cmds:
-      - cp ./templates/tests ./test/{{ .TEST }}.bats
+      - "cd test"
+      - "git submodule update --init --recursive --remote"
   test:
     desc: Run bats-core tests
     cmds:
-      - ./test/bats/bin/bats --tap test
+      - "{{ .BATS }} --tap test"
   test-lib:
     desc: Run bats-core tests on LIB
     cmds:
-      - ./test/bats/bin/bats ./test/{{ .LIB }}.bats
+      - "{{ .BATS }} ./test/{{ .LIB }}.bats"
+  new-test:
+    desc: Create a new TEST from template
+    cmds:
+      - "cp ./templates/tests ./test/{{ .TEST }}.bats"
   new-script:
     desc: Create a new SCRIPT from template
     cmds:
-      - cp ./templates/script ./{{ .SCRIPT }}.sh
+      - "cp ./templates/script ./{{ .SCRIPT }}.sh"
+      - "chmod +x ./{{ .SCRIPT }}.sh"
   new-lib:
     desc: Create a new LIB from template
     cmds:
-      - cp ./templates/lib ./{{ .LIB }}
+      - "cp ./templates/lib ./{{ .LIB }}"
+      - task: new-script
+        vars:
+          SCRIPT: "{{ .LIB }}"
+      - task: new-test
+        vars:
+          TEST: "{{ .LIB }}"
   default:
     cmds:
       - task -l
