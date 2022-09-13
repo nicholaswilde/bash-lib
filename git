@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+function lb_git_available(){
+  # shellcheck disable=SC2016
+  command -v git &>/dev/null || lb_fail 'Git binary not found in ${PATH}'
+}
+
+function lb_in_git_repo(){
+    lb_git_available
+    git status >/dev/null || lb_fail "$(pwd) is not within a git repo."
+}
+
+# Get the top level of a git repo
+function lb_repo_root(){
+    lb_in_git_repo
+    git rev-parse --show-toplevel
+}
