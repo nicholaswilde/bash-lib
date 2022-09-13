@@ -1,7 +1,7 @@
 # libbash
 [![task](https://img.shields.io/badge/Task-Enabled-brightgreen?style=for-the-badge&logo=task&logoColor=white)](https://taskfile.dev/#/)
 
-A library of common bash functions
+A collection of common bash libraries
 
 ---
 
@@ -32,6 +32,12 @@ From the base dir with `libbash` submodule installed.
 ```shell
 git submodule update --remote
 ```
+
+---
+
+## :book:&nbsp; Documentation
+
+​Documentation can be found [here][3].
 
 ---
 
@@ -78,3 +84,4 @@ This project was started in 2022 by [Nicholas Wilde][2].
 
 [1]: <https://github.com/cyberark/bash-lib>
 [2]: <https://github.com/nicholaswilde/>
+[3]: <http://nicholaswilde.io/libbash>
