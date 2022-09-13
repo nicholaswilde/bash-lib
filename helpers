@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+# Check if logging has been loaded
+# shellcheck source=/dev/null
+[[ "${LIBBASH_LOG_LEVEL:-}" ]] || source "${LIBBASH_DIR}/logging"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+function lb_die(){
+  lb_fatalln "${@}"
+  exit 1
+}
+
+function lb_fail(){
+  lb_errorln "${@}"
+  return 1
+}
