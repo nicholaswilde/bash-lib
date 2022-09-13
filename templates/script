@@ -7,3 +7,9 @@ source ./libbash/init
 # source "${LIBBASH_DIR}/str"
 # source "${LIBBASH_DIR}/file"
 # source "${LIBBASH_DIR}/checks"
+
+function main() {
+  echo "${@}"
+}
+
+main "${@}"
