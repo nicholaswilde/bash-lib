@@ -5,6 +5,7 @@ version: '3'
 
 vars:
   BATS: ./test/bats/bin/bats
+  PORT: 8000
 
 tasks:
   update:
@@ -39,6 +40,15 @@ tasks:
       - task: new-test
         vars:
           TEST: "{{ .LIB }}"
+  serve:
+    desc: >-
+      Start development server on http://0.0.0.0:{{ .PORT }} using
+      Docker and mkdocs-material
+    cmds:
+      - >-
+        docker run --rm -it -p {{ .PORT }}:{{ .PORT}} -v ${PWD}:/docs
+        --platform linux/amd64 squidfunk/mkdocs-material serve
+        --dev-addr 0.0.0.0:{{ .PORT }} -f ./mkdocs.yml
   default:
     cmds:
       - task -l
