@@ -31,3 +31,8 @@ function lb_get_last_char(){
 function lb_length(){
   printf '%s\n' "${#1}"
 }
+
+# Replace a string
+function lb_replace(){
+  printf '%s\n' "${1/$2/$3}"
+}

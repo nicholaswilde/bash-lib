@@ -24,6 +24,9 @@ function main() {
 
   s=$(lb_length "${string}")
   printf "length: %s\n" "${s}"
+
+  s=$(lb_replace "${string}" "123" "456")
+  printf "Replace: %s\n" "${s}"
 }
 
 main "${@}"

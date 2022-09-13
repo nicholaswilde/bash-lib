@@ -29,3 +29,8 @@ setup() {
   run lb_length abcABC123ABCabc
   assert_output "15"
 }
+
+@test "lb_replace() pass" {
+  run lb_replace "abcABC123ABCabc" "123" "456"
+  assert_output "abcABC456ABCabc"
+}
