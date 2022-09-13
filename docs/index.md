@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+<!-- markdownlint-disable-next-line no-trailing-punctuation -->
+# :rocket: libbash :robot:
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+[![ci](https://img.shields.io/github/workflow/status/nicholaswilde/libbash/ci?label=ci&style=for-the-badge)](https://github.com/nicholaswilde/libbash/actions/workflows/ci.yaml)
+[![task](https://img.shields.io/badge/task-enabled-brightgreen?logo=task&logoColor=white&style=for-the-badge)](https://taskfile.dev/)
 
-## Commands
+A collection of common bash libraries.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## :scales:&nbsp;​License
 
-## Project layout
+​[Apache 2.0 License](../LICENSE)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## :pencil:&nbsp;​Author
+
+​This project was started in 2022 by [Nicholas Wilde][1].
+
+[1]: https://github.com/nicholaswilde/
