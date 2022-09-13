@@ -13,10 +13,10 @@ updates:
     assignees:
       - "nicholaswilde"
 
-  - package-ecosystem: "gitsubmodule" 
-    directory: "/" 
-    schedule: 
-      interval: "daily" 
-    labels: 
-      - "dependencies" 
-      - "automerge"
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+      - "automerge"
