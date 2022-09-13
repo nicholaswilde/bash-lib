@@ -26,3 +26,8 @@ function lb_rm_last_char(){
 function lb_get_last_char(){
   printf '%s\n' "${1: -1}"
 }
+
+# Get the length of a variable
+function lb_length(){
+  printf '%s\n' "${#1}"
+}

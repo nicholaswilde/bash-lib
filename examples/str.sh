@@ -21,6 +21,9 @@ function main() {
 
   s=$(lb_get_last_char "${string}")
   printf "last char: %s\n" "${s}"
+
+  s=$(lb_length "${string}")
+  printf "length: %s\n" "${s}"
 }
 
 main "${@}"

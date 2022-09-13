@@ -24,3 +24,8 @@ setup() {
   run lb_get_last_char abc
   assert_output "c"
 }
+
+@test "lb_length() pass" {
+  run lb_length abcABC123ABCabc
+  assert_output "15"
+}
