@@ -14,3 +14,13 @@ setup() {
   run lb_to_upper foo
   assert_output "FOO"
 }
+
+@test "lb_rm_last_char() pass" {
+  run lb_rm_last_char abc
+  assert_output "ab"
+}
+
+@test "lb_get_last_char() pass" {
+  run lb_get_last_char abc
+  assert_output "c"
+}
