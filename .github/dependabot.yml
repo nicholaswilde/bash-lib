@@ -12,6 +12,7 @@ updates:
       - "nicholaswilde"
     assignees:
       - "nicholaswilde"
+
   - package-ecosystem: "gitsubmodule" 
     directory: "/" 
     schedule: 
