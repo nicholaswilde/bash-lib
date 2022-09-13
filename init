@@ -13,6 +13,9 @@ set -euo pipefail
 # shellcheck disable=SC2034
 LIBBASH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+# shellcheck source=/dev/null
+source "${LIBBASH_DIR}/helpers"
+
 # Filter functions and re export only bash-lib functions to subshells
 eval "$(declare -F | sed -e 's/-f /-fx /' | grep 'x lb_')"
 

@@ -4,14 +4,31 @@
 version: '3'
 
 tasks:
+  update:
+    desc: Update git submodules
+    cmds:
+      - cd test
+      - git submodule update --init --recursive --remote
+  new-test:
+    desc: Create a new TEST from template
+    cmds:
+      - cp ./templates/tests ./test/{{ .TEST }}.bats
+  test:
+    desc: Run bats-core tests
+    cmds:
+      - ./test/bats/bin/bats --tap test
+  test-lib:
+    desc: Run bats-core tests on LIB
+    cmds:
+      - ./test/bats/bin/bats ./test/{{ .LIB }}.bats
   new-script:
     desc: Create a new SCRIPT from template
     cmds:
-      - cp ./templates/script {{ .SCRIPT }}.sh
+      - cp ./templates/script ./{{ .SCRIPT }}.sh
   new-lib:
     desc: Create a new LIB from template
     cmds:
-      - cp ./templates/lib {{ .LIB }}
+      - cp ./templates/lib ./{{ .LIB }}
   default:
     cmds:
       - task -l

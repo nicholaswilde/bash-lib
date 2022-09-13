@@ -1,4 +1,6 @@
 # libbash
+[![task](https://img.shields.io/badge/Task-Enabled-brightgreen?style=for-the-badge&logo=task&logoColor=white)](https://taskfile.dev/#/)
+
 A library of common bash functions
 
 ---

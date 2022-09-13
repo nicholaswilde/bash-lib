@@ -14,7 +14,7 @@ function lb_command_exists(){
 
 # Check if file exists
 function lb_file_exists(){
-  [ -f "{1}" ]
+  [ -f "${1}" ]
 }
 
 # Check is variable is null
