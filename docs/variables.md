@@ -6,15 +6,20 @@
 | `LIBBASH_LOG_LEVEL` | The log level                         | Dynamic | `debug|info|warn|error|fatal` | `logging` |
 | `LIBBASH_USAGE_MSG` | The usage message for `lb_show_usage` | Dynamic | `[OPTIONS] ARGS`              | `script`  |
 
-The variables may be overwritten at runtime by adding it to the script after the importation of the library.
+Variables can either by specified inside of the script, during runtime, or as an environmental variable.
 
-```shell title="Example"
+```shell title="Inside of script"
 ...
 source "${LIBBASH_DIR}/logging"
 LIBBASH_LOG_LEVEL=debug
 ...
 ```
 
-!!! note
-    Currently, variables can not be set during the execution of of the script, such as
-    `LIBBASH_LOG_LEVEL=debug ./myscript.sh`
+```shell title="Runtime"
+LIBBASH_LOG_LEVEL=debug ./myscript.sh
+```
+
+```shell title="Environmental variable"
+LIBBASH_LOG_LEVEL=debug
+./myscript.sh
+```
