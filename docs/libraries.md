@@ -140,14 +140,6 @@ source "${LIBBASH_DIR}/str"
 
 Import all libraries.
 
-## :rocket:&nbsp; Variables
-
-| Name                | Description                           | lib       |
-|---------------------|---------------------------------------|-----------|
-| `LIBBASH_DIR`       | The absolute path for libbash         | `init`    |
-| `LIBBASH_LOG_LEVEL` | The log level                         | `logging` |
-| `LIBBASH_USAGE_MSG` | The usage message for `lb_show_usage` | `script`  |
-
 ```bash title="How to import in script"
 source "${LIBBASH_DIR}/all"
 ```
