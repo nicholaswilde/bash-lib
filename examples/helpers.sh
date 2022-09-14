@@ -2,7 +2,7 @@
 
 # shellcheck source=/dev/null
 source ../init
-source "${LIBBASH_DIR}/helpers"
+# helpers does not need to be sourced because it is automatically sourced by init.
 
 function main() {
   lb_errorln bar

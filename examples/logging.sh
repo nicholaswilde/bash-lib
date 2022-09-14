@@ -2,15 +2,14 @@
 
 # shellcheck source=/dev/null
 source ../init
-source "${LIBBASH_DIR}/logging"
+# logging does not need to be sourced because it is automatically sourced by init.
 
 # Set write log level
 # shellcheck disable=SC2034
 LIBBASH_LOG_LEVEL=debug
 
 function main() {
-  printf "lib: logging\n"
-  
+  printf "LIBBASH_LOG_LEVEL: %s\n" "${LIBBASH_LOG_LEVEL}"
   lb_debugf "debugf test\n"
   lb_infof "infof test\n"
   lb_warnf "warnf test\n"
