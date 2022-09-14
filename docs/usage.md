@@ -6,7 +6,7 @@ See [examples][1] for how to use the libraries and functions.
 #!/bin/bash
 
 # shellcheck source=/dev/null
-source ../init
+source ./libbash/init
 source "${LIBBASH_DIR}/logging"
 
 lb_infoln "infoln test"
