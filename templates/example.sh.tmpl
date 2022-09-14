@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# shellcheck source=/dev/null
+source ./libbash/init
+source "${LIBBASH_DIR}/{{ LIB }}"
+
+function main() {
+  echo "${@}"
+}
+
+main "${@}"
