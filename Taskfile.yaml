@@ -21,22 +21,30 @@ tasks:
     desc: Run bats-core tests on LIB
     cmds:
       - "{{ .BATS }} ./test/{{ .LIB }}.bats"
+  new-example:
+    desc: Create a new EXAMPLE from template
+    cmds:
+      - "cp ./templates/example.sh.tmpl  ./examples/{{ .EXAMPLE }}.sh"
+      - sed -i 's/{{"{{"}} LIB {{"}}"}}/{{ .EXAMPLE }}/g' ./examples/{{ .EXAMPLE }}.sh
+      - "chmod +x ./examples/{{ .EXAMPLE }}.sh"
   new-test:
     desc: Create a new TEST from template
     cmds:
-      - "cp ./templates/tests ./test/{{ .TEST }}.bats"
+      - "cp ./templates/tests.bats.tmpl ./test/{{ .TEST }}.bats"
+      - sed -i 's/{{"{{"}} LIB {{"}}"}}/{{ .TEST }}/g' ./test/{{ .TEST }}.bats
+
   new-script:
     desc: Create a new SCRIPT from template
     cmds:
-      - "cp ./templates/script ./{{ .SCRIPT }}.sh"
+      - "cp ./templates/script.sh.tmpl ./{{ .SCRIPT }}.sh"
       - "chmod +x ./{{ .SCRIPT }}.sh"
   new-lib:
     desc: Create a new LIB from template
     cmds:
-      - "cp ./templates/lib ./{{ .LIB }}"
-      - task: new-script
+      - "cp ./templates/lib.tmpl ./{{ .LIB }}"
+      - task: new-example
         vars:
-          SCRIPT: "{{ .LIB }}"
+          EXAMPLE: "{{ .LIB }}"
       - task: new-test
         vars:
           TEST: "{{ .LIB }}"
