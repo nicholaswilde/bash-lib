@@ -38,6 +38,7 @@ nav:
   - Installation: installation.md
   - Usage: usage.md
   - Libraries: libraries.md
+  - Variables: variables.md
 
 extra:
   social:
