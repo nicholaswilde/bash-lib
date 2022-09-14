@@ -11,10 +11,10 @@ function file() {
   printf "filename: %s\n" "${file}"
 
   s=$(lb_get_extension "${file}")
-  printf "ext: %s\n" "${s}"
+  printf "lb_get_extension: %s\n" "${s}"
 
   s=$(lb_remove_extension "${file}")
-  printf "ext removed: %s\n" "${s}"
+  printf "lb_remove_extension: %s\n" "${s}"
 }
 
 function path() {
@@ -24,20 +24,19 @@ function path() {
   printf "rel path: %s\n" "${path}"
   
   path=$(lb_get_abs_path "${path}")
-  printf "abs path: %s\n" "${path}"
+  printf "lb_get_abs_path: %s\n" "${path}"
 
   s=$(lb_get_filename "${path}")
-  printf "filename: %s\n" "${s}"
+  printf "lb_get_filename: %s\n" "${s}"
 
-  s=$(lb_get_dir_name "${path}")
-  printf "dirname: %s\n" "${s}"
+  s=$(lb_get_dir_path "${path}")
+  printf "lb_get_dir_path: %s\n" "${s}"
 
   s=$(lb_get_mime_type "${path}")
-  printf "mime type: %s\n" "${s}"
+  printf "lb_get_mime_type: %s\n" "${s}"
 }
 
 function main() {
-  printf "lib: file\n"
   file
   path
 }

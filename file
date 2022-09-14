@@ -22,8 +22,8 @@ function lb_get_filename() {
   basename "${1}"
 }
 
-# Get the directory
-function lb_get_dir_name() {
+# Get the directory path
+function lb_get_dir_path() {
   dirname "${1}"
 }
 
