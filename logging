@@ -4,7 +4,9 @@
 # shellcheck source=/dev/null
 # source ./init
 
-export LIBBASH_LOG_LEVEL=info
+LIBBASH_LOG_LEVEL=${LIBBASH_LOG_LEVEL:-"info"}
+export LIBBASH_LOG_LEVEL
+# export LIBBASH_LOG_LEVEL=info
 
 #------------------------------ Private Functions ------------------------------
 

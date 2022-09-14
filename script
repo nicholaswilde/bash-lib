@@ -3,7 +3,7 @@
 
 #------------------------------ Global Variables ------------------------------
 
-LIBBASH_USAGE_MSG="[OPTIONS] ARGS"
+LIBBASH_USAGE_MSG=${LIBBASH_USAGE_MSG:-"[OPTIONS] ARGS"}
 
 #------------------------------ Private Functions -----------------------------
 
