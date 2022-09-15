@@ -7,9 +7,13 @@ Initialize `libbash`.
     |---------------|---------------|---------------------------------|
     | `LIBBASH_DIR` | Enviromental  | The absolute path for `libbash` |
 
+!!! note
+    This library needs to be loaded before all other libraries so that the `LIBBASH_DIR`
+    variable can be loaded.
+
 ## `lb_lsf`
 
-List all `llibbash` functions.
+List all `libbash` functions.
 
 ??? info "Parameters:"
     | Name | Type | Description | Default |
