@@ -33,6 +33,12 @@ tasks:
       - "cp ./templates/tests.bats.tmpl ./test/{{ .TEST }}.bats"
       - sed -i 's/{{"{{"}} LIB {{"}}"}}/{{ .TEST }}/g' ./test/{{ .TEST }}.bats
 
+  new-doc:
+    desc: Create a new DOC from teomplate
+    cmds:
+      - "cp ./templates/doc.md.tmpl ./docs/libraries/{{ .DOC }}.md"
+      - sed -i 's/{{"{{"}} LIB {{"}}"}}/{{ .DOC }}/g' ./docs/libraries/{{ .DOC }}.md
+
   new-script:
     desc: Create a new SCRIPT from template
     cmds:
