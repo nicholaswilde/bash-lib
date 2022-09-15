@@ -37,7 +37,17 @@ nav:
   - About: about.md
   - Installation: installation.md
   - Usage: usage.md
-  - Libraries: libraries.md
+  # - Libraries: libraries.md
+  - Libraries:
+      - init: libraries/init.md
+      - all: libraries/all.md
+      - checks: libraries/checks.md
+      - git: libraries/git.md
+      - file: libraries/file.md
+      - helpers: libraries/helpers.md
+      - logging: libraries/logging.md
+      - script: libraries/script.md
+      - str: libraries/str.md
   - Variables: variables.md
 
 extra:
@@ -70,6 +80,7 @@ markdown_extensions:
   - md_in_html
   - admonition
   - tables
+  - pymdownx.details
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
