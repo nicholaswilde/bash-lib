@@ -1,6 +1,6 @@
 # all
 
-Import all libraries.
+A library to import all libraries.
 
 ??? example "Examples:"
     ```shell hl_lines="5" linenums="1"
