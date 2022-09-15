@@ -2,6 +2,9 @@
 
 A library of logging functions.
 
+!!! note
+    This library is automatically loaded by the [`helpers`][1] library.
+
 ??? abstract "Variables:"
     | Name                | Type      | Description                   | Default | Options                       |
     |---------------------|-----------|-------------------------------|---------|-------------------------------|
@@ -199,3 +202,4 @@ Print a `fatal` message with a new line.
     ```shell hl_lines="162-164" linenums="1"
     --8<-- "logging"
     ```
+[1]: <./helpers.md>
