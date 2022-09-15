@@ -5,6 +5,9 @@ A library of `libbash` helper functions.
 !!! note
     This library is automatically loaded by the [`init`][1] library.
 
+!!! note
+    This library automatically loads the [`logging`][2] library.
+
 ## `lb_die` <span style="color:blue">`msg`</span>
 
 Send a fatal message and exit with a status of `1`.
@@ -47,3 +50,4 @@ Send an error  message and return a status of `1`.
     --8<-- "helpers"
     ```
 [1]: <./init.md>
+[2]: <./logging.md>
