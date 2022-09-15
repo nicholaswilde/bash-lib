@@ -2,6 +2,9 @@
 
 A library of `libbash` helper functions.
 
+!!! note
+    This library is automatically loaded by the [`init`][1] library.
+
 ## `lb_die` <span style="color:blue">`msg`</span>
 
 Send a fatal message and exit with a status of `1`.
@@ -43,3 +46,4 @@ Send an error  message and return a status of `1`.
     ```shell hl_lines="19 20 21 22" linenums="1"
     --8<-- "helpers"
     ```
+[1]: <./init.md>
