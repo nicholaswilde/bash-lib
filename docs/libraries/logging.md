@@ -2,6 +2,8 @@
 
 A library of logging functions.
 
+![](../assets/images/logging-1.png)
+
 !!! note
     This library is automatically loaded by the [`helpers`][1] library.
 
