@@ -23,7 +23,7 @@ Return `0` if a command exists.
 
 ## `lb_file_exists` `file`
 
-Check if a file exists.
+Return `0` if a file exists.
 
 ??? info "Parameters:"
     | Name    | Type      | Description             | Default     |
@@ -42,7 +42,7 @@ Check if a file exists.
 
 ## `lb_dir_exists` `dir`
 
-Check if a directory exists.
+Return `0` if a directory exists.
 
 ??? info "Parameters:"
     | Name  | Type      | Description           | Default     |
@@ -61,7 +61,7 @@ Check if a directory exists.
 
 ## `lb_is_null` `var`
 
-Check if a variable is null.
+Return `0` if a variable is null.
 
 ??? info "Parameters:"
     | Name  | Type      | Description           | Default     |
