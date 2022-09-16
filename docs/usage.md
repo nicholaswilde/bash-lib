@@ -1,8 +1,15 @@
 # :chart_with_downwards_trend: Usage
 
-See [examples][1] for how to use the libraries and functions.
-
 ## :scroll: Script
+
+=== "Task"
+    ```shell title="From the libbash root dir"
+    task new-script SCRIPT=myscript
+    mv ./myscript.sh /to/myproject/myscript.sh
+    ```
+
+    !!! note
+        Task automatically adds an `sh` file extension to the script filename.
 
 === "Manual"
     ```shell title="myscript.sh"
@@ -14,15 +21,6 @@ See [examples][1] for how to use the libraries and functions.
 
     lb_infoln "infoln test"
     ```
-
-=== "Task"
-    ```shell title="From the libbash dir"
-    task new-script SCRIPT=myscript
-    mv ./myscript.sh /to/myproject/myscript.sh
-    ```
-
-    !!! note
-        Task automatically adds an `sh` file extension to the script file name.
 
 ## :camping: Environmental Variables
 
@@ -47,6 +45,24 @@ Environmental variables are used to set some options for the library. They can b
     ```shell
     FOO=BAR
     ./myscript.sh
+    ```
+
+## :jigsaw: Examples
+
+[Example scripts][1] exist to demonstrate how to use the libraries and functions
+
+!!! note
+    Example scripts need to be ran inside of the `examples` directory.
+
+=== "Task"
+    ```shell
+    task example EXAMPLE=logging
+    ```
+
+=== "Manual"
+    ```shell
+    cd examples
+    ./logging.sh
     ```
 
 [1]: <https://github.com/nicholaswilde/libbash/tree/main/examples>

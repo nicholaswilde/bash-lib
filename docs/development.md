@@ -29,6 +29,13 @@
 
 [Example scripts][3] exist to demonstrate how to use the libraries and functions
 
+!!! note
+    Example scripts need to be ran inside of the `examples` directory.
+
+```shell title="Example"
+libbash/examples$ ./logging.sh
+```
+
 ## :test_tube: Unit Tests
 
 [bats-core][4] is used to automate the testing of the libraries.
