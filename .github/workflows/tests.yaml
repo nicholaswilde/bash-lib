@@ -21,6 +21,7 @@ on:  # yamllint disable-line rule:truthy
       - 'logging'
       - 'script'
       - 'str'
+      - 'url'
 jobs:
   test:
     runs-on: ubuntu-latest

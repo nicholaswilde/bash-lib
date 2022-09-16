@@ -47,6 +47,7 @@ nav:
       - logging: libraries/logging.md
       - script: libraries/script.md
       - str: libraries/str.md
+      - url: libraries/url.md
   - Development: development.md
   - Contributing: CONTRIBUTING.md
   - Code of Conduct: CODE_OF_CONDUCT.md

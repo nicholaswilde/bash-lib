@@ -2,7 +2,7 @@
 : "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
 
 # Load all files
-for file in "${LIBBASH_DIR}"/{file,str,logging,checks,script,git}; do
+for file in "${LIBBASH_DIR}"/{file,str,logging,checks,script,git,url}; do
   if [[ -r "$file" ]] && [[ -f "$file" ]]; then
     # shellcheck source=/dev/null
     source "$file"
