@@ -8,6 +8,10 @@ vars:
   PORT: 8000
 
 tasks:
+  example:
+    desc: Run an EXAMPLE
+    cmds:
+      - "cd examples && ./{{ .EXAMPLE }}.sh"
   update:
     desc: Update git submodules
     cmds:
