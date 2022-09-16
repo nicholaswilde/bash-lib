@@ -2,7 +2,13 @@
 
 `libbash` can be installed as a [git submodule][1] in the directory with the script for ease of updating.
 
-```shell title="From the directory of the script"
+```shell title="Project layout"
+myproject/
+├─ libbash/
+└─ myscript.sh
+```
+
+```shell title="From the `myproject` directory"
 git submodule add https://github.com/nicholaswilde/libbash 
 ```
 
