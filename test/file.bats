@@ -21,8 +21,8 @@ setup() {
   assert_output "Taskfile.yaml"
 }
 
-@test "lb_get_dir_name() pass" {
-  run lb_get_dir_name "${FILE}"
+@test "lb_get_dir_path() pass" {
+  run lb_get_dir_path "${FILE}"
   assert_output "${PROJECT_ROOT}"
 }
 
