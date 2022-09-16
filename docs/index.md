@@ -31,7 +31,7 @@ lb_infoln "infoln test"
 From the base dir with `libbash` submodule installed.
 
 ```shell
-git submodule update --remote
+git submodule update --init --recursive --remote
 ```
 
 ## :bulb:&nbsp; Inspiration
