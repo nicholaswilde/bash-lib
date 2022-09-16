@@ -37,7 +37,7 @@ to update the libraries to the latest versions.
 Enable `Dependabot` in your repository by clicking `Enable Dependabot` button under `Insights > Dependency Graph >`
 `Dependabot` settings of your repository. For more information please check [GitHub Documentation][3].
 
-![](../assets/images/installation-1.png)
+![](./assets/images/installation-1.png)
 
 Create a `dependabot.yml` file in the `.github` folder of your repository with the following content:
 
