@@ -11,22 +11,26 @@ function main() {
   printf "string: %s\n" "${string}"
 
   s=$(lb_to_upper "${string}")
-  printf "Upper: %s\n" "${s}"
+  printf "lb_to_upper: %s\n" "${s}"
 
   s=$(lb_to_lower "${string}")
-  printf "Lower: %s\n" "${s}"
+  printf "lb_to_lower: %s\n" "${s}"
 
   s=$(lb_rm_last_char "${string}")
-  printf "last char removed: %s\n" "${s}"
+  printf "lb_rm_last_char: %s\n" "${s}"
 
   s=$(lb_get_last_char "${string}")
-  printf "last char: %s\n" "${s}"
+  printf "lb_get_last_char: %s\n" "${s}"
 
   s=$(lb_length "${string}")
-  printf "length: %s\n" "${s}"
+  printf "lb_length: %s\n" "${s}"
 
   s=$(lb_replace "${string}" "123" "456")
-  printf "Replace: %s\n" "${s}"
+  printf "lb_replace: %s\n" "${s}"
+
+  s=$(lb_reverse_case "${string}")
+  printf "lb_reverse_case: %s\n" "${s}"
+
 }
 
 main "${@}"

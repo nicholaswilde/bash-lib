@@ -39,6 +39,12 @@ function lb_length(){
 
 # Replace a string
 function lb_replace(){
+    # Usage: reverse_case "string"
   lb_check_args_num "${@}" 3
   printf '%s\n' "${1/$2/$3}"
+}
+
+function lb_reverse_case() {
+  lb_check_args_num "${@}" 1
+  printf '%s\n' "${1~~}"
 }

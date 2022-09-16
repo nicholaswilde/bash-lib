@@ -34,3 +34,12 @@ setup() {
   run lb_replace "abcABC123ABCabc" "123" "456"
   assert_output "abcABC456ABCabc"
 }
+
+@test lb_reverse_case() pass {
+  run lb_reverse_case "HeLlO"
+  assert_output "hElLo"
+  run lb_reverse_case "hello"
+  assert_output "HELLO"
+  run lb_reverse_case "HELLO"
+  assert_output "hello"
+}

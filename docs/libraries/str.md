@@ -117,3 +117,22 @@ Return a copy of the string with all occurrences of substring `old` replaced by 
     ```shell hl_lines="41-44" linenums="1"
     --8<-- "str"
     ```
+
+## `lb_replace` `string`
+
+Return a copy of the string with reverse case.
+
+??? info "Parameters:"
+    | Name      | Type      | Description                                         | Default     |
+    |-----------|-----------|-----------------------------------------------------|-------------|
+    | `string`  | `string`  | The string that is to be converted to reverse case  | *required*  |
+
+??? example "Examples:"
+    ```shell hl_lines="31" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+    ```shell hl_lines="47-50" linenums="1"
+    --8<-- "str"
+    ```
