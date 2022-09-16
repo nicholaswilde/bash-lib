@@ -118,7 +118,7 @@ Return a copy of the string with all occurrences of substring `old` replaced by 
     --8<-- "str"
     ```
 
-## `lb_replace` `string`
+## `lb_reverse_case` `string`
 
 Return a copy of the string with reverse case.
 
