@@ -38,32 +38,7 @@ git submodule update --remote
 
 ## :book:&nbsp; Documentation
 
-​Documentation can be found [here][3].
-
----
-
-## :books:&nbsp; Libraries
-
-| lib       | Description               |
-|-----------|:--------------------------|
-| `all`     | Import all libraries      |
-| `checks`  | All types of checks       |
-| `file`    | File related functions    |
-| `git`     | git related functions     |
-| `init`    | Initialize `libbash`      |
-| `logging` | A bash logging library    |
-| `script`  | Script related functions  |
-| `str`     | String manipulation       |
-
----
-
-## :rocket:&nbsp; Variables
-
-| Name                | Description                           | lib       |
-|---------------------|---------------------------------------|-----------|
-| `LIBBASH_DIR`       | The absolute path for libbash         | `init`    |
-| `LIBBASH_LOG_LEVEL` | The log level                         | `logging` |
-| `LIBBASH_USAGE_MSG` | The usage message for `lb_show_usage` | `script`  |
+Documentation can be found [here][3].
 
 ---
 
