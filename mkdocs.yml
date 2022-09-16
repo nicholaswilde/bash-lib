@@ -37,7 +37,6 @@ nav:
   - About: about.md
   - Installation: installation.md
   - Usage: usage.md
-  # - Libraries: libraries.md
   - Libraries:
       - init: libraries/init.md
       - all: libraries/all.md
@@ -48,7 +47,6 @@ nav:
       - logging: libraries/logging.md
       - script: libraries/script.md
       - str: libraries/str.md
-  - Variables: variables.md
 
 extra:
   social:
