@@ -9,30 +9,36 @@
 
 # Convert string to lower case
 function lb_to_lower(){
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${1,,}"
 }
 
 # Convert string to upper case
 function lb_to_upper(){
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${1^^}"
 }
 
 # Remove the last character
 function lb_rm_last_char(){
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${1::-1}"
 }
 
 # Get the last character
 function lb_get_last_char(){
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${1: -1}"
 }
 
 # Get the length of a variable
 function lb_length(){
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${#1}"
 }
 
 # Replace a string
 function lb_replace(){
+  lb_check_args_num "${@}" 3
   printf '%s\n' "${1/$2/$3}"
 }

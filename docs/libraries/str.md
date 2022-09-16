@@ -17,7 +17,7 @@ Convert the string to lower case.
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="11 12 13" linenums="1"
+    ```shell hl_lines="11-14" linenums="1"
     --8<-- "str"
     ```
 
@@ -36,7 +36,7 @@ Convert the string to upper case.
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="16-18" linenums="1"
+    ```shell hl_lines="17-20" linenums="1"
     --8<-- "str"
     ```
 
@@ -55,7 +55,7 @@ Remove the last character of a string.
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="21 22 23" linenums="1"
+    ```shell hl_lines="23-26" linenums="1"
     --8<-- "str"
     ```
 
@@ -74,7 +74,7 @@ Get the last character of a string.
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="26 27 28" linenums="1"
+    ```shell hl_lines="29-32" linenums="1"
     --8<-- "str"
     ```
 
@@ -93,7 +93,7 @@ Get the length of a string.
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="31 32 33" linenums="1"
+    ```shell hl_lines="35-38" linenums="1"
     --8<-- "str"
     ```
 
@@ -114,6 +114,6 @@ Return a copy of the string with all occurrences of substring `old` replaced by 
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="36 37 38" linenums="1"
+    ```shell hl_lines="41-44" linenums="1"
     --8<-- "str"
     ```
