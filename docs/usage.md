@@ -13,7 +13,7 @@
 
 === "Manual"
     ```shell title="myscript.sh"
-    #!/bin/bash
+    #!/usr/bin/env bash
 
     # shellcheck source=/dev/null
     source ./libbash/init
@@ -28,7 +28,7 @@ Environmental variables are used to set some options for the library. They can b
 
 === "Script"
     ```shell
-    #!/bin/bash
+    #!/usr/bin/env bash
 
     source ./libbash/init
     source ${LIBBASH_DIR}/script

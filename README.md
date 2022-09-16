@@ -18,7 +18,7 @@ git submodule add https://github.com/nicholaswilde/libbash
 ### :gear:&nbsp; Usage
 
 ```shell
-#!/bin/bash
+#!/usr/bin/env bash
 
 # shellcheck source=/dev/null
 source ./libbash/init
