@@ -1,0 +1,23 @@
+---
+name: Tests
+
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Setup Task
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+          brew install go-task/tap/go-task
+      - name: Run tests
+        run: task test
