@@ -20,3 +20,18 @@ function lb_fail(){
   lb_errorln "${@}"
   return 1
 }
+
+function lb_check_args_num(){
+  # Number of arguments passed
+  n=$(("${#@}"-1))
+  # last argument
+  i="${*: -1}"
+  if (( i != n )); then
+    if (( i == 1 )); then
+      arg="arg"
+    else
+      arg="args"
+    fi
+    lb_fail "$(printf "expected %s %s but got %s" "${i}" "${arg}" "${n}")"
+  fi
+}

@@ -18,3 +18,15 @@ setup() {
   assert_output --partial "ERRO"
   assert_failure
 }
+
+@test "lb_check_args_num() success" {
+  run lb_check_args_num "one" 1
+  run lb_check_args_num "one" "two" 2
+  assert_success
+}
+
+@test "lb_check_args_num() failures" {
+  run lb_check_args_num "one" "two" 1
+  run lb_check_args_num "one" 2
+  assert_failure
+}
