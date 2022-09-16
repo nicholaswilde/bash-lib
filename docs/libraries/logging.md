@@ -8,9 +8,9 @@ A library of logging functions.
     This library is automatically loaded by the [`helpers`][1] library.
 
 ??? abstract "Variables:"
-    | Name                | Type      | Description                   | Default | Options                       |
-    |---------------------|-----------|-------------------------------|---------|-------------------------------|
-    | `LIBBASH_LOG_LEVEL` | `string`  | The log level during runtime  | `info`  | `debug|info|warn|error|fatal` |
+    | Name                | Type                | Description                   | Default | Options                       |
+    |---------------------|---------------------|-------------------------------|---------|-------------------------------|
+    | `LIBBASH_LOG_LEVEL` | [Environmental][2]  | The log level during runtime  | `info`  | `debug|info|warn|error|fatal` |
     
 !!! note
     `printf` functions currently do not support the passing of multiple parameters.
@@ -205,3 +205,4 @@ Print a `fatal` message with a new line.
     --8<-- "logging"
     ```
 [1]: <./helpers.md>
+[2]: <../usage.md#environmental-variables>

@@ -14,7 +14,7 @@ Show a script usage message.
 ??? abstract "Variables:"
     | Name                | Type          | Description                     | Default           |
     |---------------------|---------------|---------------------------------|-------------------|
-    | `LIBBASH_USAGE_MSG` | Environmental | The suffix of the usage message | `[OPTIONS] ARGS`  |
+    | `LIBBASH_USAGE_MSG` | [Environmental][1] | The suffix of the usage message | `[OPTIONS] ARGS`  |
 
 ??? example "Examples:"
     ```shell hl_lines="12" linenums="1"
@@ -66,3 +66,5 @@ Show the script usage and help options and exit with a status of `1`.
     ```shell hl_lines="22 23 24 25 26" linenums="1"
     --8<-- "script"
     ```
+
+[1]: <../usage.md#environmental-variables>
