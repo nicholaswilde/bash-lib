@@ -47,6 +47,7 @@ nav:
       - logging: libraries/logging.md
       - script: libraries/script.md
       - str: libraries/str.md
+  - Development: development.md
 
 extra:
   social:
