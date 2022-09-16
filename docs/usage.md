@@ -1,38 +1,30 @@
-# Usage
+# :chart_with_downwards_trend: Usage
 
 See [examples][1] for how to use the libraries and functions.
 
-## Layout
+## :scroll: Script
 
-```shell
-myproject
-├─ myscript.sh
-└─ libbash
-```
+=== "Manual"
+    ```shell title="myscript.sh"
+    #!/bin/bash
 
-## Script
+    # shellcheck source=/dev/null
+    source ./libbash/init
+    source "${LIBBASH_DIR}/logging"
 
-```shell title="myscript.sh"
-#!/bin/bash
+    lb_infoln "infoln test"
+    ```
 
-# shellcheck source=/dev/null
-source ./libbash/init
-source "${LIBBASH_DIR}/logging"
+=== "Task"
+    ```shell title="From the libbash dir"
+    task new-script SCRIPT=myscript
+    mv ./myscript.sh /to/myproject/myscript.sh
+    ```
 
-lb_infoln "infoln test"
-```
+    !!! note
+        Task automatically adds an `sh` file extension to the script file name.
 
-Task may also be used to generate a new script.
-
-```shell title="From the `libbash` dir"
-task new-script SCRIPT=myscript
-mv ./myscript.sh /to/myproject/myscript.sh
-```
-
-!!! note
-    Task automatically adds an `sh` file extension to the script file name.
-
-## Environmental Variables
+## :camping: Environmental Variables
 
 Environmental variables are used to set some options for the library. They can be set a few different ways.
 
