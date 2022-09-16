@@ -45,7 +45,7 @@ Documentation can be found [here][3].
 
 ## :bulb:&nbsp; Inspiration
 
-Inspiration for this repository has been taken from [cyberark/bash-lib][1].
+Inspiration for this repository has been taken from [cyberark/bash-lib][1] and [dylanaraps/pure-bash-bible][4].
 
 ---
 
@@ -62,3 +62,4 @@ This project was started in 2022 by [Nicholas Wilde][2].
 [1]: <https://github.com/cyberark/bash-lib>
 [2]: <https://github.com/nicholaswilde/>
 [3]: <http://nicholaswilde.io/libbash>
+[4]: <https://github.com/dylanaraps/pure-bash-bible>
