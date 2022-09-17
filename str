@@ -10,13 +10,13 @@ LIBBASH_DELIMITER=${LIBBASH_DELIMITER:-","}
 #------------------------------ Public Functions ------------------------------
 
 # Convert string to lower case
-function lb_to_lower(){
+function lb_to_lower_all(){
   lb_check_args_num "${@}" 1
   printf '%s\n' "${1,,}"
 }
 
 # Convert string to upper case
-function lb_to_upper(){
+function lb_to_upper_all(){
   lb_check_args_num "${@}" 1
   printf '%s\n' "${1^^}"
 }
@@ -45,7 +45,7 @@ function lb_replace(){
   printf '%s\n' "${1/$2/$3}"
 }
 
-function lb_reverse_case() {
+function lb_reverse_case_all() {
   lb_check_args_num "${@}" 1
   printf '%s\n' "${1~~}"
 }
@@ -109,4 +109,19 @@ function lb_rstrip(){
   lb_check_args_num "${@}" 2
   # shellcheck disable=SC2295
   printf '%s\n' "${1%%$2}"
+}
+
+function lb_to_upper(){
+  lb_check_args_num "${@}" 1
+  printf '%s\n' "${1^}"
+}
+
+function lb_to_lower(){
+  lb_check_args_num "${@}" 1
+  printf '%s\n' "${1,}"
+}
+
+function lb_reverse_case() {
+  lb_check_args_num "${@}" 1
+  printf '%s\n' "${1~}"
 }
