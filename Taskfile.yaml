@@ -8,6 +8,29 @@ vars:
   PORT: 8000
 
 tasks:
+  yamllint:
+    desc: Run yamllint
+    cmds:
+      - >-
+        docker run --rm -it -v ${PWD}:${PWD}:ro -w ${PWD}
+        programmerassistant/yamllint yamllint .
+  markdownlint:
+    desc: Run markdownlint-cli
+    cmds:
+      - >-
+        docker run --rm -it -v ${PWD}:/markdown:ro
+        06kellyjac/markdownlint-cli .
+  markdownlint-fix:
+    desc: Run markdownlint-cli fix
+    cmds:
+      - >-
+        docker run --rm -it -v ${PWD}:/markdown:ro
+        06kellyjac/markdownlint-cli -f .
+  pre-commit:
+    desc: Setup pre-commit
+    cmds:
+      - "pre-commit install"
+      - "pre-commit install-hooks"
   example:
     desc: Run an EXAMPLE
     cmds:
