@@ -14,12 +14,12 @@ Convert the string to lower case.
 ??? example "Examples:"
     ```shell hl_lines="14" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
     ```shell hl_lines="13-16" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_to_upper` `string`
 
@@ -33,12 +33,12 @@ Convert the string to upper case.
 ??? example "Examples:"
     ```shell hl_lines="11" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
     ```shell hl_lines="19-22" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_rm_last_char` `string`
 
@@ -52,12 +52,12 @@ Remove the last character of a string.
 ??? example "Examples:"
     ```shell hl_lines="17" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
     ```shell hl_lines="25-28" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_get_last_char` `string`
 
@@ -71,12 +71,12 @@ Get the last character of a string.
 ??? example "Examples:"
     ```shell hl_lines="20" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
     ```shell hl_lines="30-34" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_length` `string`
 
@@ -90,12 +90,12 @@ Get the length of a string.
 ??? example "Examples:"
     ```shell hl_lines="23" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
     ```shell hl_lines="36-40" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_replace` `string` `old` `new`
 
@@ -111,12 +111,12 @@ Return a copy of the string with all occurrences of substring `old` replaced by 
 ??? example "Examples:"
     ```shell hl_lines="26" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
     ```shell hl_lines="43-47" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_reverse_case` `string`
 
@@ -128,14 +128,14 @@ Return a copy of the string with reverse case.
     | `string`  | `string`  | The string that is to be converted to reverse case  | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="30" linenums="1"
+    ```shell hl_lines="29" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="49-52" linenums="1"
+    ```shell hl_lines="48-51" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_split` `string` [`delimiter`]
 
@@ -155,12 +155,12 @@ Return an array of the `string` components split at the `delimiter`.
 ??? example "Examples:"
     ```shell hl_lines="35" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="54-62" linenums="1"
+    ```shell hl_lines="53-61" linenums="1"
     --8<-- "str"
-    ```
+```
 
 ## `lb_trim` `string`
 
@@ -174,12 +174,12 @@ Return a copy of the string with leading and trailing white-space removed.
 ??? example "Examples:"
     ```shell hl_lines="40" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="64-69" linenums="1"
+    ```shell hl_lines="63-68" linenums="1"
     --8<-- "str"
-    ```
+```
 
 !!! note
     This function does not trim the white-space in between words. See [`lb_trim_all`](#lb_trim_all).
@@ -196,9 +196,28 @@ Return a copy of the string with leading and trailing white-space removed and tr
 ??? example "Examples:"
     ```shell hl_lines="45" linenums="1"
     --8<-- "examples/str.sh"
-    ```
+```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="71-85" linenums="1"
+    ```shell hl_lines="70-84" linenums="1"
     --8<-- "str"
-    ```
+```
+
+## `lb_trim_quotes` `string`
+
+Return a copy of the string with single and double quotes removed.
+
+??? info "Parameters:"
+    | Name      | Type      | Description                                 | Default     |
+    |-----------|-----------|---------------------------------------------|-------------|
+    | `string`  | `string`  | The string that is to be trimmed of quotes  | *required*  |
+
+??? example "Examples:"
+    ```shell hl_lines="50" linenums="1"
+    --8<-- "examples/str.sh"
+```
+
+??? quote "Show source code in `str`"
+    ```shell hl_lines="86-90" linenums="1"
+    --8<-- "str"
+```

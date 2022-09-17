@@ -102,3 +102,13 @@ setup() {
   run echo $-
   refute_output --partial "f"
 }
+
+@test "lb_trim_quotes() pass" {
+  run lb_trim_quotes "'Hello', \"World\""
+  assert_output "Hello, World"
+}
+
+@test "lb_trim_quotes() fail" {
+  run lb_trim_quotes "'Hello', \"World\""
+  refute_output "'Hello', \"World\""
+}

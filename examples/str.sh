@@ -44,6 +44,11 @@ function main() {
   printf "string: %s\n" "${string}"
   s=$(lb_trim_all "${string}")
   printf "lb_trim_all: %s\n" "${s}"
+
+  string="'Hello', \"World\""
+  printf "string: %s\n" "${string}"
+  s=$(lb_trim_quotes "${string}")
+  printf "lb_trim_quotes: %s\n" "${s}"
 }
 
 main "${@}"

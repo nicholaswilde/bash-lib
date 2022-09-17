@@ -41,7 +41,6 @@ function lb_length(){
 
 # Replace a string
 function lb_replace(){
-    # Usage: reverse_case "string"
   lb_check_args_num "${@}" 3
   printf '%s\n' "${1/$2/$3}"
 }
@@ -82,4 +81,10 @@ function lb_trim_all(){
   if [[ "${is_set}" == "false" ]]; then
     set +f
   fi
+}
+
+function lb_trim_quotes(){
+  lb_check_args_num "${@}" 1
+  : "${1//\'}"
+  printf '%s\n' "${_//\"}"
 }
