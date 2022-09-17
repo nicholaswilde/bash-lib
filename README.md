@@ -1,4 +1,6 @@
+<!-- markdownlint-disable-next-line no-trailing-punctuation -->
 # :rocket: libbash :robot:
+
 [![ci](https://img.shields.io/github/workflow/status/nicholaswilde/libbash/ci?label=ci&style=for-the-badge)](https://github.com/nicholaswilde/libbash/actions/workflows/ci.yaml)
 [![tests](https://img.shields.io/github/workflow/status/nicholaswilde/libbash/ci?label=tests&style=for-the-badge)](https://github.com/nicholaswilde/libbash/actions/workflows/tests.yaml)
 [![task](https://img.shields.io/badge/Task-Enabled-brightgreen?style=for-the-badge&logo=task&logoColor=white)](https://taskfile.dev/#/)
@@ -12,7 +14,7 @@ A collection of common bash libraries
 ### :floppy_disk:&nbsp; Installation
 
 ```shell
-git submodule add https://github.com/nicholaswilde/libbash 
+git submodule add https://github.com/nicholaswilde/libbash
 ```
 
 ### :gear:&nbsp; Usage
