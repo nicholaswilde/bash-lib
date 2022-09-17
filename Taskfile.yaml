@@ -8,6 +8,16 @@ vars:
   PORT: 8000
 
 tasks:
+  commit-lib:
+    desc: Commit a new LIB
+    cmds:
+      - "git add {{ .LIB }} ./examples/{{ .LIB }}.sh ./test/{{ .LIB }}.bats ./docs/libraries/{{ .LIB }}.md"
+      - "git commit -m \"feat: add {{ .LIB }}\""
+  commit-func:
+    desc: Commit a new FUNC in a LIB
+    cmds:
+      - "git add {{ .LIB }} ./examples/{{ .LIB }}.sh ./test/{{ .LIB }}.bats ./docs/libraries/{{ .LIB }}.md"
+      - "git commit -m \"feat: add {{ .FUNC }}\""
   yamllint:
     desc: Run yamllint
     cmds:
