@@ -108,6 +108,56 @@ Return `0` if a `var` is an integer.
 
 ??? quote "Show source code in `checks`"
 
-    ```shell hl_lines="34-37" linenums="1"
+    ```shell hl_lines="34-38" linenums="1"
     --8<-- "checks"
     ```
+
+## `lb_is_float` `var`
+
+Return `0` if a `var` is a float.
+
+??? info "Parameters:"
+
+    | Name  | Type      | Description           | Default     |
+    |-------|-----------|-----------------------|-------------|
+    | `var` | `string`  | The var to check for  | *required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="48" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? quote "Show source code in `checks`"
+
+    ```shell hl_lines="40-44" linenums="1"
+    --8<-- "checks"
+    ```
+
+!!! note
+    A decimal point with no leading number, such as `1.`, returns `1`.
+
+## `lb_is_bool` `var`
+
+Return `0` if a `var` is a boolean.
+
+??? info "Parameters:"
+
+    | Name  | Type      | Description           | Default     |
+    |-------|-----------|-----------------------|-------------|
+    | `var` | `string`  | The var to check for  | *required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="55" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? quote "Show source code in `checks`"
+
+    ```shell hl_lines="46-52" linenums="1"
+    --8<-- "checks"
+    ```
+
+!!! note
+    `1` is returned if the `var` is blank or upper case (`TRUE`/`FALSE`)

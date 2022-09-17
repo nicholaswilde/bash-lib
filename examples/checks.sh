@@ -44,6 +44,22 @@ function check_int(){
   fi
 }
 
+function check_float(){
+  if lb_is_float "${1}"; then
+    printf "%s is a float\n" "${1}"
+  else
+    printf "%s is not a float\n" "${1}"
+  fi
+}
+
+function check_bool(){
+  if lb_is_bool "${1}"; then
+    printf "%s is a bool\n" "${1}"
+  else
+    printf "%s is not a bool\n" "${1}"
+  fi
+}
+
 function check_commands(){
   check_command "foo"
   check_command "ls"
@@ -67,18 +83,52 @@ function check_vars(){
 
 function check_ints(){
   check_int 1
+  check_int 11
   check_int -1
+  check_int -11
   check_int 1.1
+  check_int 12.12
   check_int "foo"
 }
 
+function check_floats(){
+  check_float 1
+  check_float 12
+  check_float -1
+  check_float -12
+  check_float 12.12
+  check_float -12.12
+  check_float .12
+  check_float 0.12
+  check_float -.12
+  check_float 1.
+  check_float "foo"
+}
+
+function check_bools(){
+  check_bool 0
+  check_bool 1
+  check_bool 2
+  check_bool -0
+  check_bool -1
+  check_bool true
+  check_bool TRUE
+  check_bool false
+  check_bool FALSE
+  check_bool "true"
+  check_bool "false"
+  check_bool "foo"
+  check_bool ""
+}
+
 function main() {
-  printf "lib: checks\n"
   check_commands
   check_files
   check_dirs
   check_vars
   check_ints
+  check_floats
+  check_bools
 }
 
 main "${@}"

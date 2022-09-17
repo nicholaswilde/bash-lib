@@ -33,5 +33,20 @@ function lb_dir_exists() {
 
 function lb_is_int() {
   lb_check_args_num "${@}" 1
+  # https://stackoverflow.com/a/2210386/1061279
   [[ "${1}" =~ ^-?[0-9]+$ ]]
+}
+
+function lb_is_float() {
+  lb_check_args_num "${@}" 1
+  # https://stackoverflow.com/a/12643073/1061279
+  [[ "${1}" =~ ^[+-]?([0-9]*[.])?[0-9]+$ ]]
+}
+
+function lb_is_bool() {
+  lb_check_args_num "${@}" 1
+  case ${1} in
+    "true"|1|0|"false") return 0;;
+    *) return 1;;
+  esac
 }

@@ -57,3 +57,43 @@ setup() {
   run lb_is_int "FOO"
   assert_failure
 }
+
+@test "lb_is_float() passes" {
+  run lb_is_float 1
+  run lb_is_float 12
+  run lb_is_float -1
+  run lb_is_float -12
+  run lb_is_float 12.12
+  run lb_is_float -12.12
+  run lb_is_float .12
+  run lb_is_float 0.12
+  run lb_is_float -.12
+  assert_success
+}
+
+@test "lb_is_float() fails" {
+  run lb_is_float "FOO"
+  run lb_is_float "F12"
+  run lb_is_float "F.12"
+  run lb_is_float "1."
+  assert_failure
+}
+
+@test "lb_is_bool() passes" {
+  run lb_is_bool 1
+  run lb_is_bool 0
+  run lb_is_bool true
+  run lb_is_bool false
+  assert_success
+}
+
+@test "lb_is_bool() fails" {
+  run lb_is_bool "FOO"
+  run lb_is_bool "TRUE"
+  run lb_is_bool "FALSE"
+  run lb_is_bool 2
+  run lb_is_bool -0
+  run lb_is_bool -1
+  run lb_is_bool ""
+  assert_failure
+}
