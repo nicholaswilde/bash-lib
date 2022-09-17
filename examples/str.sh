@@ -5,8 +5,6 @@ source ../init
 source "${LIBBASH_DIR}/str"
 
 function main() {
-  printf "lib: str\n"
-  
   string="abcABC123ABCabc"
   printf "string: %s\n" "${string}"
 
@@ -31,6 +29,11 @@ function main() {
   s=$(lb_reverse_case "${string}")
   printf "lb_reverse_case: %s\n" "${s}"
 
+  printf "LIBBASH_DELIMITER: %s\n" "${LIBBASH_DELIMITER}"
+  string="apples,oranges,pears,grapes"
+  printf "string: %s\n" "${string}"
+  s=$(lb_split "${string}")
+  printf "lb_split: %s\n" "${s}"
 }
 
 main "${@}"

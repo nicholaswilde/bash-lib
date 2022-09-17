@@ -3,6 +3,8 @@
 
 #------------------------------ Global Variables ------------------------------
 
+LIBBASH_DELIMITER=${LIBBASH_DELIMITER:-","}
+
 #------------------------------ Private Functions -----------------------------
 
 #------------------------------ Public Functions ------------------------------
@@ -47,4 +49,14 @@ function lb_replace(){
 function lb_reverse_case() {
   lb_check_args_num "${@}" 1
   printf '%s\n' "${1~~}"
+}
+
+function lb_split(){
+  if [[ "${#@}" != 1 ]] && [[ "${#@}" != 2 ]]; then
+    lb_fail "$(printf "expected 1 or 2 args but got %s\n" "${#@}")"
+  fi
+  # Default delimiter
+  delim=${2:-${LIBBASH_DELIMITER}}
+  IFS=$'\n' read -d "" -ra arr <<< "${1//$delim/$'\n'}"
+  printf '%s\n' "${arr[@]}"
 }

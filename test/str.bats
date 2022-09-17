@@ -35,11 +35,36 @@ setup() {
   assert_output "abcABC456ABCabc"
 }
 
-@test lb_reverse_case() pass {
+@test "lb_reverse_case() pass" {
   run lb_reverse_case "HeLlO"
   assert_output "hElLo"
   run lb_reverse_case "hello"
   assert_output "HELLO"
   run lb_reverse_case "HELLO"
   assert_output "hello"
+}
+
+@test "lb_split() pass default delimiter" {
+  run lb_split "apples,oranges,pears,grapes"
+  assert_line --index 0 apples
+  assert_line --index 1 oranges
+  assert_line --index 2 pears
+  assert_line --index 3 grapes
+}
+
+@test "lb_split() pass with passed delimiter" {
+  run lb_split "apples;oranges;pears;grapes" ";"
+  assert_line --index 0 apples
+  assert_line --index 1 oranges
+  assert_line --index 2 pears
+  assert_line --index 3 grapes
+}
+
+@test "lb_split() pass with environmental variable delimiter" {
+  LIBBASH_DELIMITER=";"
+  run lb_split "apples;oranges;pears;grapes"
+  assert_line --index 0 apples
+  assert_line --index 1 oranges
+  assert_line --index 2 pears
+  assert_line --index 3 grapes
 }

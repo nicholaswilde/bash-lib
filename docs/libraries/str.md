@@ -12,12 +12,12 @@ Convert the string to lower case.
     | `string`  | `string`  | The string to conver to lower case | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="13" linenums="1"
+    ```shell hl_lines="14" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="11-14" linenums="1"
+    ```shell hl_lines="13-16" linenums="1"
     --8<-- "str"
     ```
 
@@ -31,12 +31,12 @@ Convert the string to upper case.
     | `string`  | `string`  | The string to conver to upper case | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="13" linenums="1"
+    ```shell hl_lines="11" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="17-20" linenums="1"
+    ```shell hl_lines="19-22" linenums="1"
     --8<-- "str"
     ```
 
@@ -50,12 +50,12 @@ Remove the last character of a string.
     | `string`  | `string`  | The string from which to remove the last character  | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="19" linenums="1"
+    ```shell hl_lines="17" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="23-26" linenums="1"
+    ```shell hl_lines="25-28" linenums="1"
     --8<-- "str"
     ```
 
@@ -69,12 +69,12 @@ Get the last character of a string.
     | `string`  | `string`  | The string from which to get the last character | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="22" linenums="1"
+    ```shell hl_lines="20" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="29-32" linenums="1"
+    ```shell hl_lines="30-34" linenums="1"
     --8<-- "str"
     ```
 
@@ -88,12 +88,12 @@ Get the length of a string.
     | `string`  | `string`  | The string from which to get the length | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="25" linenums="1"
+    ```shell hl_lines="23" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="35-38" linenums="1"
+    ```shell hl_lines="36-40" linenums="1"
     --8<-- "str"
     ```
 
@@ -109,12 +109,12 @@ Return a copy of the string with all occurrences of substring `old` replaced by 
     | `new`     | `string`  | The substring to be replaced by     | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="28" linenums="1"
+    ```shell hl_lines="26" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="41-44" linenums="1"
+    ```shell hl_lines="43-47" linenums="1"
     --8<-- "str"
     ```
 
@@ -128,11 +128,36 @@ Return a copy of the string with reverse case.
     | `string`  | `string`  | The string that is to be converted to reverse case  | *required*  |
 
 ??? example "Examples:"
-    ```shell hl_lines="31" linenums="1"
+    ```shell hl_lines="30" linenums="1"
     --8<-- "examples/str.sh"
     ```
 
 ??? quote "Show source code in `str`"
-    ```shell hl_lines="47-50" linenums="1"
+    ```shell hl_lines="49-52" linenums="1"
+    --8<-- "str"
+    ```
+
+## `lb_split` `string` [`delimiter`]
+
+Return an array of the `string` components split at the `delimiter`.
+
+??? info "Parameters:"
+    | Name        | Type      | Description                                         | Default     |
+    |-------------|-----------|-----------------------------------------------------|-------------|
+    | `string`    | `string`  | The string that is to be split                      | *required*  |
+    | `delimiter` | `string`  | The delimiter that is to be used to split `string`  | *optional*  |
+
+??? abstract "Variables:"
+    | Name                | Type      | Description                                                 | Default     |
+    |---------------------|-----------|-------------------------------------------------------------|-------------|
+    | `LIBBASH_DELIMITER` | `string`  | The default delimiter that is to be used to split `string`  | `,`         |
+
+??? example "Examples:"
+    ```shell hl_lines="35" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+    ```shell hl_lines="54-62" linenums="1"
     --8<-- "str"
     ```
