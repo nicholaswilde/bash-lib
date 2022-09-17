@@ -45,3 +45,15 @@ setup() {
   run lb_dir_exists "${PROJECT_ROOT}/foo"
   assert_failure
 }
+
+@test "lb_is_int() passes" {
+  run lb_is_int 1
+  run lb_is_int -1
+  assert_success
+}
+
+@test "lb_is_int() fails" {
+  run lb_is_int 1.1
+  run lb_is_int "FOO"
+  assert_failure
+}

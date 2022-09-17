@@ -36,6 +36,14 @@ function check_var(){
   fi
 }
 
+function check_int(){
+  if lb_is_int "${1}"; then
+    printf "%s is an int\n" "${1}"
+  else
+    printf "%s is not an int\n" "${1}"
+  fi
+}
+
 function check_commands(){
   check_command "foo"
   check_command "ls"
@@ -57,12 +65,20 @@ function check_vars(){
   check_var "${LIBBASH_DIR}"
 }
 
+function check_ints(){
+  check_int 1
+  check_int -1
+  check_int 1.1
+  check_int "foo"
+}
+
 function main() {
   printf "lib: checks\n"
   check_commands
   check_files
   check_dirs
   check_vars
+  check_ints
 }
 
 main "${@}"

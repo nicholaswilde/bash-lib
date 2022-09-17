@@ -9,20 +9,29 @@
 
 # Check if command exists
 function lb_command_exists(){
+  lb_check_args_num "${@}" 1
   command -v "${1}" &> /dev/null
 }
 
 # Check if file exists
 function lb_file_exists(){
+  lb_check_args_num "${@}" 1
   [ -f "${1}" ]
 }
 
 # Check is variable is null
 function lb_is_null {
+  lb_check_args_num "${@}" 1
   [ -z "${1}" ]
 }
 
 # Checkifdir exists
 function lb_dir_exists() {
+  lb_check_args_num "${@}" 1
   [ -d "${1}" ]
+}
+
+function lb_is_int() {
+  lb_check_args_num "${@}" 1
+  [[ "${1}" =~ ^-?[0-9]+$ ]]
 }
