@@ -32,6 +32,6 @@ jobs:
       - name: Setup Task
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-          brew install go-task/tap/go-task
+          brew install go-task/tap/go-task parallel
       - name: Run tests
         run: task test

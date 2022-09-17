@@ -5,14 +5,28 @@ setup() {
   source "${PROJECT_ROOT}/str"
 }
 
-@test "lb_to_lower() pass" {
-  run lb_to_lower FOO
+@test "lb_to_lower_all() pass" {
+  run lb_to_lower_all "FOO"
   assert_output "foo"
 }
 
-@test "lb_to_upper() pass" {
-  run lb_to_upper foo
+@test "lb_to_lower() pass" {
+  run lb_to_lower "FOO"
+  assert_output "fOO"
+  run lb_to_lower "fOO"
+  assert_output "fOO"
+}
+
+@test "lb_to_upper_all() pass" {
+  run lb_to_upper_all "foo"
   assert_output "FOO"
+}
+
+@test "lb_to_upper() pass" {
+  run lb_to_upper "foo"
+  assert_output "Foo"
+  run lb_to_upper "Foo"
+  assert_output "Foo"
 }
 
 @test "lb_rm_last_char() pass" {
@@ -35,13 +49,22 @@ setup() {
   assert_output "abcABC456ABCabc"
 }
 
+@test "lb_reverse_case_all() pass" {
+  run lb_reverse_case_all "HeLlO"
+  assert_output "hElLo"
+  run lb_reverse_case_all "hello"
+  assert_output "HELLO"
+  run lb_reverse_case_all "HELLO"
+  assert_output "hello"
+}
+
 @test "lb_reverse_case() pass" {
   run lb_reverse_case "HeLlO"
-  assert_output "hElLo"
+  assert_output "heLlO"
   run lb_reverse_case "hello"
-  assert_output "HELLO"
+  assert_output "Hello"
   run lb_reverse_case "HELLO"
-  assert_output "hello"
+  assert_output "hELLO"
 }
 
 @test "lb_split() pass default delimiter" {

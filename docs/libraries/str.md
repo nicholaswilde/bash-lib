@@ -2,15 +2,15 @@
 
 A library of string related functions.
 
-## `lb_to_lower` `string`
+## `lb_to_lower_all` `string`
 
-Convert the string to lower case.
+Return a string with all characters converted to lower case.
 
 ??? info "Parameters:"
 
-    | Name      | Type      | Description                        | Default     |
-    |-----------|-----------|------------------------------------|-------------|
-    | `string`  | `string`  | The string to conver to lower case | *required*  |
+    | Name      | Type      | Description                         | Default     |
+    |-----------|-----------|-------------------------------------|-------------|
+    | `string`  | `string`  | The string to convert to lower case | *required*  |
 
 ??? example "Examples:"
 
@@ -24,15 +24,15 @@ Convert the string to lower case.
     --8<-- "str"
     ```
 
-## `lb_to_upper` `string`
+## `lb_to_upper_all` `string`
 
-Convert the string to upper case.
+Return a string with all characters converted to upper case.
 
 ??? info "Parameters:"
 
-    | Name      | Type      | Description                        | Default     |
-    |-----------|-----------|------------------------------------|-------------|
-    | `string`  | `string`  | The string to conver to upper case | *required*  |
+    | Name      | Type      | Description                         | Default     |
+    |-----------|-----------|-------------------------------------|-------------|
+    | `string`  | `string`  | The string to convert to upper case | *required*  |
 
 ??? example "Examples:"
 
@@ -48,9 +48,10 @@ Convert the string to upper case.
 
 ## `lb_rm_last_char` `string`
 
-Remove the last character of a string.
+Return a string with the last character removed.
 
 ??? info "Parameters:"
+
     | Name      | Type      | Description                                         | Default     |
     |-----------|-----------|-----------------------------------------------------|-------------|
     | `string`  | `string`  | The string from which to remove the last character  | *required*  |
@@ -69,7 +70,7 @@ Remove the last character of a string.
 
 ## `lb_get_last_char` `string`
 
-Get the last character of a string.
+Return the last character of a string.
 
 ??? info "Parameters:"
 
@@ -135,9 +136,9 @@ Return a copy of the string with all occurrences of substring `old` replaced by 
     --8<-- "str"
     ```
 
-## `lb_reverse_case` `string`
+## `lb_reverse_case_all` `string`
 
-Return a copy of the string with reverse case.
+Return a copy of the string with reverse case of all characters.
 
 ??? info "Parameters:"
 
@@ -344,5 +345,71 @@ Return a copy of the string with a pattern stripped from the end of string.
 ??? quote "Show source code in `str`"
 
     ```shell hl_lines="108-112" linenums="1"
+    --8<-- "str"
+    ```
+
+## `lb_reverse_case` `string`
+
+Return a copy of the string with reverse case of the first character.
+
+??? info "Parameters:"
+
+    | Name      | Type      | Description                                                                   | Default     |
+    |-----------|-----------|-------------------------------------------------------------------------------|-------------|
+    | `string`  | `string`  | The string with which the first character is to be converted to reverse case  | *required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="89" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+
+    ```shell hl_lines="124-127" linenums="1"
+    --8<-- "str"
+    ```
+
+## `lb_to_lower` `string`
+
+Return a string with the first character converted to lower case.
+
+??? info "Parameters:"
+
+    | Name      | Type      | Description                                             | Default     |
+    |-----------|-----------|---------------------------------------------------------|-------------|
+    | `string`  | `string`  | The string to convert the first character to lower case | *required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="77" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+
+    ```shell hl_lines="119-122" linenums="1"
+    --8<-- "str"
+    ```
+
+## `lb_to_upper` `string`
+
+Return a string with the first character converted to upper case.
+
+??? info "Parameters:"
+
+    | Name      | Type      | Description                                             | Default     |
+    |-----------|-----------|---------------------------------------------------------|-------------|
+    | `string`  | `string`  | The string to convert the first character to upper case | *required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="71" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+
+    ```shell hl_lines="114-117" linenums="1"
     --8<-- "str"
     ```

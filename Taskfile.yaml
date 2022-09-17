@@ -43,7 +43,7 @@ tasks:
   test:
     desc: Run bats-core tests
     cmds:
-      - "{{ .BATS }} --tap test"
+      - "{{ .BATS }} --jobs 4 --tap test"
   test-lib:
     desc: Run bats-core tests on LIB
     cmds:
