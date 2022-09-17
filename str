@@ -88,3 +88,25 @@ function lb_trim_quotes(){
   : "${1//\'}"
   printf '%s\n' "${_//\"}"
 }
+
+function lb_strip_all(){
+  lb_check_args_num "${@}" 2
+  printf '%s\n' "${1//$2}"
+}
+
+function lb_strip(){
+  lb_check_args_num "${@}" 2
+  printf '%s\n' "${1/$2}"
+}
+
+function lb_lstrip(){
+  lb_check_args_num "${@}" 2
+  # shellcheck disable=SC2295
+  printf '%s\n' "${1##$2}"
+}
+
+function lb_rstrip(){
+  lb_check_args_num "${@}" 2
+  # shellcheck disable=SC2295
+  printf '%s\n' "${1%%$2}"
+}

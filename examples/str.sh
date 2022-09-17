@@ -40,8 +40,6 @@ function main() {
   s=$(lb_trim "${string}")
   printf "lb_trim: %s\n" "${s}"
 
-  string="    Hello,  World    "
-  printf "string: %s\n" "${string}"
   s=$(lb_trim_all "${string}")
   printf "lb_trim_all: %s\n" "${s}"
 
@@ -49,6 +47,23 @@ function main() {
   printf "string: %s\n" "${string}"
   s=$(lb_trim_quotes "${string}")
   printf "lb_trim_quotes: %s\n" "${s}"
+
+  string="The Quick Brown Fox"
+  printf "string: %s\npattern: %s\n" "${string}" "[aeiou]"
+  s=$(lb_strip_all "${string}" "[aeiou]")
+  printf "lb_strip_all: %s\n" "${s}"
+
+  printf "string: %s\npattern: %s\n" "${string}" "[aeiou]"
+  s=$(lb_strip "${string}" "[aeiou]")
+  printf "lb_strip: %s\n" "${s}"
+
+  printf "string: %s\npattern: %s\n" "${string}" "The "
+  s=$(lb_lstrip "${string}" "The ")
+  printf "lb_lstrip: %s\n" "${s}"
+
+  printf "string: %s\npattern: %s\n" "${string}" " Fox"
+  s=$(lb_rstrip "${string}" " Fox")
+  printf "lb_rstrip: %s\n" "${s}"
 }
 
 main "${@}"

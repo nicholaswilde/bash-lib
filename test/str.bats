@@ -112,3 +112,43 @@ setup() {
   run lb_trim_quotes "'Hello', \"World\""
   refute_output "'Hello', \"World\""
 }
+
+@test "lb_strip_all() pass" {
+  run lb_strip_all "The Quick Brown Fox" "[aeiou]"
+  assert_output "Th Qck Brwn Fx"
+}
+
+@test "lb_strip_all() fail" {
+  run lb_strip_all "The Quick Brown Fox" "[aeiou]"
+  refute_output "The Quick Brown Fox"
+}
+
+@test "lb_strip() pass" {
+  run lb_strip "The Quick Brown Fox" "[aeiou]"
+  assert_output "Th Quick Brown Fox"
+}
+
+@test "lb_strip() fail" {
+  run lb_strip "The Quick Brown Fox" "[aeiou]"
+  refute_output "The Quick Brown Fox"
+}
+
+@test "lb_lstrip() pass" {
+  run lb_lstrip "The Quick Brown Fox" "The "
+  assert_output "Quick Brown Fox"
+}
+
+@test "lb_lstrip() fail" {
+  run lb_lstrip "The Quick Brown Fox" "The "
+  refute_output "The Quick Brown Fox"
+}
+
+@test "lb_rstrip() pass" {
+  run lb_rstrip "The Quick Brown Fox" " Fox"
+  assert_output "The Quick Brown"
+}
+
+@test "lb_rstrip() fail" {
+  run lb_rstrip "The Quick Brown Fox" " Fox"
+  refute_output "The Quick Brown Fox"
+}
