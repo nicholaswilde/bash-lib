@@ -68,3 +68,37 @@ setup() {
   assert_line --index 2 pears
   assert_line --index 3 grapes
 }
+
+@test "lb_trim() pass" {
+  run lb_trim "    Hello,  World    "
+  assert_output "Hello,  World"
+}
+
+@test "lb_trim() fail" {
+  run lb_trim "    Hello,  World    "
+  refute_output "Hello, World"
+}
+
+@test "lb_trim_all() pass" {
+  run lb_trim_all "    Hello,  World    "
+  assert_output "Hello, World"
+}
+
+@test "lb_trim_all() fail" {
+  run lb_trim_all "    Hello,  World    "
+  refute_output "Hello,  World"
+}
+
+@test "lb_trim_all() set -f success" {
+  set -f
+  run lb_trim_all "    Hello,  World    "
+  run echo $-
+  assert_output --partial "f"
+}
+
+@test "lb_trim_all() set +f fail" {
+  set +f
+  run lb_trim_all "    Hello,  World    "
+  run echo $-
+  refute_output --partial "f"
+}

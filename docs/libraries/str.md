@@ -161,3 +161,44 @@ Return an array of the `string` components split at the `delimiter`.
     ```shell hl_lines="54-62" linenums="1"
     --8<-- "str"
     ```
+
+## `lb_trim` `string`
+
+Return a copy of the string with leading and trailing white-space removed.
+
+??? info "Parameters:"
+    | Name      | Type      | Description                       | Default     |
+    |-----------|-----------|-----------------------------------|-------------|
+    | `string`  | `string`  | The string that is to be trimmed  | *required*  |
+
+??? example "Examples:"
+    ```shell hl_lines="40" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+    ```shell hl_lines="64-69" linenums="1"
+    --8<-- "str"
+    ```
+
+!!! note
+    This function does not trim the white-space in between words. See [`lb_trim_all`](#lb_trim_all).
+
+## `lb_trim_all` `string`
+
+Return a copy of the string with leading and trailing white-space removed and truncated spaces in between words.
+
+??? info "Parameters:"
+    | Name      | Type      | Description                                     | Default     |
+    |-----------|-----------|-------------------------------------------------|-------------|
+    | `string`  | `string`  | The string that is to be trimmed and truncated  | *required*  |
+
+??? example "Examples:"
+    ```shell hl_lines="45" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+    ```shell hl_lines="71-85" linenums="1"
+    --8<-- "str"
+    ```

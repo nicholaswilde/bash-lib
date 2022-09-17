@@ -60,3 +60,26 @@ function lb_split(){
   IFS=$'\n' read -d "" -ra arr <<< "${1//$delim/$'\n'}"
   printf '%s\n' "${arr[@]}"
 }
+
+function lb_trim(){
+  lb_check_args_num "${@}" 1
+  : "${1#"${1%%[![:space:]]*}"}"
+  : "${_%"${_##*[![:space:]]}"}"
+  printf '%s\n' "$_"
+}
+
+function lb_trim_all(){
+  lb_check_args_num "${@}" 1
+  if [[ "$-" = *f* ]]; then
+    is_set="false"
+  else
+    is_set="true"
+  fi
+  set -f
+  # shellcheck disable=SC2048,SC2086
+  set -- $*
+  printf '%s\n' "$*"
+  if [[ "${is_set}" == "false" ]]; then
+    set +f
+  fi
+}

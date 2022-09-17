@@ -34,6 +34,16 @@ function main() {
   printf "string: %s\n" "${string}"
   s=$(lb_split "${string}")
   printf "lb_split: %s\n" "${s}"
+
+  string="    Hello,  World    "
+  printf "string: %s\n" "${string}"
+  s=$(lb_trim "${string}")
+  printf "lb_trim: %s\n" "${s}"
+
+  string="    Hello,  World    "
+  printf "string: %s\n" "${string}"
+  s=$(lb_trim_all "${string}")
+  printf "lb_trim_all: %s\n" "${s}"
 }
 
 main "${@}"
