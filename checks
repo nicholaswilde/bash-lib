@@ -50,3 +50,18 @@ function lb_is_bool() {
     *) return 1;;
   esac
 }
+
+function lb_contains(){
+  lb_check_args_num "${@}" 2
+  [[ "${1}" == *"${2}"* ]]
+}
+
+function lb_starts_with(){
+  lb_check_args_num "${@}" 2
+  [[ "${1}" == "${2}"* ]]
+}
+
+function lb_ends_with(){
+  lb_check_args_num "${@}" 2
+  [[ "${1}" == *"${2}" ]]
+}

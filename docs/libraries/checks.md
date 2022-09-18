@@ -161,3 +161,101 @@ Return `0` if a `var` is a boolean.
 
 !!! note
     `1` is returned if the `var` is blank or upper case (`TRUE`/`FALSE`)
+
+## `lb_contains` `var` `substring`
+
+Return `0` if a `var` contains `substring`.
+
+??? info "Parameters:"
+
+    | Name        | Type      | Description                         | Default     |
+    |-------------|-----------|-------------------------------------|-------------|
+    | `var`       | `string`  | The var to check in for `substring` | *required*  |
+    | `substring` | `string`  | The substring to check for in `var` | *required*  |
+
+??? example "`string` Examples:"
+
+    ```shell hl_lines="64 151-153" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? example "`array` Examples:"
+
+    ```shell hl_lines="64 159-161" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? quote "Show source code in `checks`"
+
+    ```shell hl_lines="54-57" linenums="1"
+    --8<-- "checks"
+    ```
+
+!!! note
+    `var` can be both a `string` or an `array`. When checking in an `array`, use the `${arr[*]}` parameter expansion.
+
+## `lb_starts_with` `var` `substring`
+
+Return `0` if a `var` starts with `substring`.
+
+??? info "Parameters:"
+
+    | Name        | Type      | Description                                       | Default     |
+    |-------------|-----------|---------------------------------------------------|-------------|
+    | `var`       | `string`  | The var to check at teh start for `substring`     | *required*  |
+    | `substring` | `string`  | The substring to check for at the start of `var`  | *required*  |
+
+??? example "`string` Examples:"
+
+    ```shell hl_lines="72 181-182" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? example "`array` Examples:"
+
+    ```shell hl_lines="72 188-189" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? quote "Show source code in `checks`"
+
+    ```shell hl_lines="59-62" linenums="1"
+    --8<-- "checks"
+    ```
+
+!!! note
+    `var` can be both a `string` or an `array`. When checking in an `array`, use the `${arr[*]}` parameter expansion.
+    If `var` is an array, the function checks if the first element is `substring`.
+
+## `lb_ends_with` `var` `substring`
+
+Return `0` if a `var` ends with `substring`.
+
+??? info "Parameters:"
+
+    | Name        | Type      | Description                                     | Default     |
+    |-------------|-----------|-------------------------------------------------|-------------|
+    | `var`       | `string`  | The var to check the end for `substring`        | *required*  |
+    | `substring` | `string`  | The substring to check for at the end of `var`  | *required*  |
+
+??? example "`string` Examples:"
+
+    ```shell hl_lines="80 195-196" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? example "`array` Examples:"
+
+    ```shell hl_lines="80 202-203" linenums="1"
+    --8<-- "examples/checks.sh"
+    ```
+
+??? quote "Show source code in `checks`"
+
+    ```shell hl_lines="64-67" linenums="1"
+    --8<-- "checks"
+    ```
+
+!!! note
+    `var` can be both a `string` or an `array`. When checking in an `array`, use the `${arr[*]}` parameter expansion.
+    If `var` is an array, the function checks if the last element is `substring`.

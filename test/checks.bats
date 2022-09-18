@@ -97,3 +97,49 @@ setup() {
   run lb_is_bool ""
   assert_failure
 }
+
+@test "lb_contains() passes" {
+  run lb_contains "foo bar" "foo"
+  run lb_contains "foo bar" "bar"
+  arr=("foo" "bar")
+  run lb_contains "${arr[*]}" "foo"
+  run lb_contains "${arr[*]}" "bar"
+  assert_success
+}
+
+@test "lb_contains() failse" {
+  run lb_contains "foo bar" "baz"
+  arr=("foo" "bar")
+  run lb_contains "${arr[*]}" "baz"
+  assert_failure
+}
+
+@test "lb_starts_with() passes" {
+  run lb_starts_with "foo bar" "foo"
+  arr=("foo" "bar")
+  run lb_starts_with "${arr[*]}" "foo"
+  assert_success
+}
+
+@test "lb_starts_with() failse" {
+  run lb_starts_with "foo bar" "bar"
+  arr=("foo" "bar")
+  run lb_starts_with "${arr[*]}" "bar"
+  assert_failure
+}
+
+@test "lb_ends_with() passes" {
+  run lb_ends_with "foo bar" "bar"
+  arr=("foo" "bar")
+  run lb_ends_with "${arr[*]}" "bar"
+  assert_success
+}
+
+@test "lb_ends_with() fails" {
+  run lb_ends_with "foo bar" "foo"
+  run lb_ends_with "foo bar" "baz"
+  arr=("foo" "bar")
+  run lb_ends_with "${arr[*]}" "foo"
+  run lb_ends_with "${arr[*]}" "baz"
+  assert_failure
+}
