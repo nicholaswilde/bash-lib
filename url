@@ -8,6 +8,26 @@
 #------------------------------ Public Functions ------------------------------
 
 function lb_get_domain() {
+  lb_check_args_num "${@}" 1
   # https://unix.stackexchange.com/a/428990/93726
   echo "${1}" | sed -e "s/[^/]*\/\/\([^@]*@\)\?\([^:/]*\).*/\2/" | sed "s/^www\.//" | cut -f 1 -d '.'
+}
+
+function lb_url_encode(){
+  lb_check_args_num "${@}" 1
+  local LC_ALL=C
+  for (( i = 0; i < ${#1}; i++ )); do
+    : "${1:i:1}"
+    case "$_" in
+      [a-zA-Z0-9.~_-])  printf '%s' "$_";;
+      *)                printf '%%%02X' "'$_";;
+    esac
+  done
+  printf '\n'
+}
+
+function lb_url_decode() {
+  lb_check_args_num "${@}" 1
+  : "${1//+/ }"
+  printf '%b\n' "${_//%/\\x}"
 }
