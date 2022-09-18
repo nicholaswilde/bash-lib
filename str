@@ -125,3 +125,8 @@ function lb_reverse_case() {
   lb_check_args_num "${@}" 1
   printf '%s\n' "${1~}"
 }
+
+function lb_regex(){
+  lb_check_args_num "${@}" 2
+  [[ $1 =~ $2 ]] && printf '%s\n' "${BASH_REMATCH[1]}"
+}

@@ -80,6 +80,11 @@ function main() {
   s=$(lb_reverse_case "${string}")
   printf "lb_reverse_case: %s\n" "${s}"
 
+  string="    hello"
+  printf "string: %s\npattern: %s\n" "${string}" '^\s*(.*)'
+
+  s=$(lb_regex "${string}" '^\s*(.*)')
+  printf "lb_regex: %s\n" "${s}"
 }
 
 main "${@}"

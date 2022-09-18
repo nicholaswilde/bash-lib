@@ -413,3 +413,32 @@ Return a string with the first character converted to upper case.
     ```shell hl_lines="114-117" linenums="1"
     --8<-- "str"
     ```
+
+## `lb_regex` `string` `pattern`
+
+Return a matching regular expression from a `pattern` and `string`.
+
+??? info "Parameters:"
+
+    | Name        | Type      | Description                     | Default     |
+    |-------------|-----------|---------------------------------|-------------|
+    | `string`    | `string`  | The string perform the regex on | *required*  |
+    | `pattern`   | `string`  | The pattern used to by regex    | *required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="86" linenums="1"
+    --8<-- "examples/str.sh"
+    ```
+
+??? quote "Show source code in `str`"
+
+    ```shell hl_lines="129-132" linenums="1"
+    --8<-- "str"
+    ```
+
+!!! note
+    bash will use whatever regex engine is installed on the user's system.
+
+!!! note
+    This function only prints the first matching group.

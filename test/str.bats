@@ -175,3 +175,12 @@ setup() {
   run lb_rstrip "The Quick Brown Fox" " Fox"
   refute_output "The Quick Brown Fox"
 }
+
+@test "lb_regex() pass" {
+  run lb_regex '    hello' '^\s*(.*)'
+  assert_output "hello"
+  run lb_regex "#FFFFFF" '^(#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3}))$'
+  assert_output "#FFFFFF"
+  run lb_regex "red" '^(#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3}))$'
+  assert_output ""
+}
