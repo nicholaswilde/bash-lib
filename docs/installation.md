@@ -8,9 +8,18 @@ myproject/
 └─ myscript.sh
 ```
 
-```shell title="From the `myproject` directory"
-git submodule add https://github.com/nicholaswilde/libbash 
-```
+=== "From inside a git repo"
+
+    ```shell
+    git submodule add https://github.com/nicholaswilde/libbash
+    ```
+
+=== "From outside a git repo"
+
+    ```shell
+    git clone https://github.com/nicholaswilde/libbash.git
+    ```
+
 
 ## :arrow_up: Update
 

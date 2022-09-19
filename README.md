@@ -13,9 +13,18 @@ A collection of common bash libraries
 
 ### :floppy_disk:&nbsp; Installation
 
+From within a git repo.
+
 ```shell
 git submodule add https://github.com/nicholaswilde/libbash
 ```
+
+From outside a git repo.
+
+```shell
+git clone https://github.com/nicholaswilde/libbash.git
+```
+
 
 ### :gear:&nbsp; Usage
 

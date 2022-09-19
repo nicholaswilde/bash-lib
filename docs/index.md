@@ -11,9 +11,18 @@ A collection of common bash libraries.
 
 ### :floppy_disk:&nbsp; Installation
 
-```shell title="From the script directory"
-git submodule add https://github.com/nicholaswilde/libbash
-```
+=== "From within a git repo"
+
+    ```shell title="From the script directory"
+    git submodule add https://github.com/nicholaswilde/libbash
+    ```
+
+=== "From outside a git repo"
+
+    ```shell title="From the script directory"
+    git clone https://github.com/nicholaswilde/libbash.git
+    ```
+
 
 ### :gear:&nbsp; Usage
 
