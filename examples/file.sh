@@ -67,6 +67,10 @@ function do_path() {
 
   s=$(lb_extract "${path}" "marker1" "marker2")
   printf "lb_extract: %s\n" "${s}"
+
+  printf "filepath: %s\n" "${path}"
+  s=$(lb_get_parent_dir_name "${path}")
+  printf "lb_get_parent_dir_name: %s\n" "${s}"
 }
 
 function main() {

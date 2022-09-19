@@ -80,3 +80,8 @@ function lb_extract(){
   done < "${1}"
   printf '%s\n' "${a[@]}"
 }
+
+function lb_get_parent_dir_name(){
+  lb_check_args_num "${@}" 1
+  basename "$(dirname "${1}")"
+}

@@ -55,3 +55,10 @@ setup() {
   assert_line --index 0 "aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   assert_line --index 1 "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur"
 }
+
+@test "lb_get_parent_dir_name() pass" {
+  run lb_get_parent_dir_name "${FILE}"
+  assert_output "test_files"
+  run lb_get_parent_dir_name "${TEST_FILES_DIR}"
+  assert_output "test"
+}

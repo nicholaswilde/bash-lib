@@ -269,3 +269,25 @@ Return the text between two line markers in a file.
 
 !!! note
     Only the the lines between the first instances that match `marker1` and `marker2` are returned.
+
+## `lb_get_parent_dir_name` `path`
+
+Return the name of the parent folder of either a file or a directory.
+
+??? info "Parameters:"
+
+    | Name    | Type      | Description                                                                     | Default     |
+    |---------|-----------|---------------------------------------------------------------------------------|-------------|
+    | `path`  | `string`  | The filepath or directory path from which to get the name of the parent folder  | *Required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="72" linenums="1"
+    --8<-- "examples/file.sh"
+    ```
+
+??? quote "Show source code in `file`"
+
+    ```shell hl_lines="84-87" linenums="1"
+    --8<-- "file"
+    ```
