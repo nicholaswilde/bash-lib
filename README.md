@@ -24,9 +24,9 @@ git submodule add https://github.com/nicholaswilde/libbash
 
 # shellcheck source=/dev/null
 source ./libbash/init
-source "${LIBBASH_DIR}/logging"
+source "${LIBBASH_DIR}/str"
 
-lb_infoln "infoln test"
+lb_to_upper_all "foo"
 ```
 
 ### :arrow_up:&nbsp; Update
