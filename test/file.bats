@@ -42,10 +42,16 @@ setup() {
 
 @test "lb_get_lines() pass" {
   run lb_get_lines "${TEST_FILES_DIR}/file1"
-  assert_output 4
+  assert_output 6
 }
 
 @test "lb_count_files() pass" {
   run lb_count_files "${TEST_FILES_DIR}/*"
   assert_output 5
+}
+
+@test "lb_extract() pass" {
+  run lb_extract "${TEST_FILES_DIR}/file1" "marker1" "marker2"
+  assert_line --index 0 "aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  assert_line --index 1 "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur"
 }

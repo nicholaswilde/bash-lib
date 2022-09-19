@@ -66,3 +66,17 @@ function lb_count_files(){
   done
   printf '%s\n' "${count}"
 }
+
+function lb_extract(){
+  lb_check_args_num "${@}" 3
+  test -f "${1}" || (lb_fail "file does not exist"; exit 1)
+  extract=
+  a=()
+  while IFS=$'\n' read -r line; do
+    [[ $extract && $line != "${3}" ]] &&
+      a+=("${line}")
+    [[ $line == "${2}" ]] && extract=1
+    [[ $line == "${3}" ]] && extract=
+  done < "${1}"
+  printf '%s\n' "${a[@]}"
+}

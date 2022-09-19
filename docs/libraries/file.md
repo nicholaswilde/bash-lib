@@ -186,7 +186,7 @@ Return the number of specific files or files and directories in a dirpath glob.
 !!! note
     This function returns the number of files and directories with the `/*` glob pattern.
 
-## `lb_count_files` `dirpath`
+## `lb_count_files` `"dirpath"`
 
 Return the number of files or files in a dirpath glob.
 
@@ -236,3 +236,36 @@ Return the number of lines in a file.
     ```shell hl_lines="46-54" linenums="1"
     --8<-- "file"
     ```
+
+## `lb_extract` `filepath` `marker1` `marker2`
+
+Return the text between two line markers in a file.
+
+??? info "Parameters:"
+
+    | Name        | Type      | Description                                   | Default     |
+    |-------------|-----------|-----------------------------------------------|-------------|
+    | `filepath`  | `string`  | The filepath from which to extract the lines  | *Required*  |
+    | `marker1`   | `string`  | The line of which to start the extraction     | *Required*  |
+    | `marker2`   | `string`  | The line of which to end the extraction       | *Required*  |
+
+??? example "Examples:"
+
+    ```shell hl_lines="68" linenums="1"
+    --8<-- "examples/file.sh"
+    ```
+
+??? quote "Show source code in `file`"
+
+    ```shell hl_lines="70-82" linenums="1"
+    --8<-- "file"
+    ```
+
+!!! note
+    `marker1` and `marker2` are not included in the return value.
+
+!!! note
+    `marker1` and `marker2` need to be exact matches of the lines.
+
+!!! note
+    Only the the lines between the first instances that match `marker1` and `marker2` are returned.

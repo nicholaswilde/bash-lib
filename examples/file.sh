@@ -64,6 +64,9 @@ function do_path() {
 
   s=$(lb_count_files "${s}")
   printf "lb_count files: %s\n" "${s}"
+
+  s=$(lb_extract "${path}" "marker1" "marker2")
+  printf "lb_extract: %s\n" "${s}"
 }
 
 function main() {
