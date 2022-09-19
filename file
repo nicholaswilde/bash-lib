@@ -9,30 +9,60 @@
 
 # Remove file extension
 function lb_remove_extension() {
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${1%%.*}"
 }
 
 # Get file extension
 function lb_get_extension() {
+  lb_check_args_num "${@}" 1
   printf '%s\n' "${1#*.}"
 }
 
 # Get the file name
 function lb_get_filename() {
+  lb_check_args_num "${@}" 1
   basename "${1}"
 }
 
 # Get the directory path
 function lb_get_dir_path() {
+  lb_check_args_num "${@}" 1
   dirname "${1}"
 }
 
 # Get the absolute path
 function lb_get_abs_path(){
+  lb_check_args_num "${@}" 1
   s=$(readlink -f "${1}")
   printf '%s\n' "${s}"
 }
 
 function lb_get_mime_type(){
+  lb_check_args_num "${@}" 1
   file -b --mime-type "${1}"
+}
+
+function lb_get_lines() {
+  lb_check_args_num "${@}" 1
+  test -f "${1}" || (lb_fail "file does not exist"; return 1)
+  count=0
+  while IFS= read -r _; do
+    ((count++))
+  done < "${1}"
+  printf '%s\n' "$count"
+}
+
+function lb_count(){
+  ((${#@} == 0)) && lb_fail "expected at least 1 arg but got 0"
+  printf '%s\n' "$#"
+}
+
+function lb_count_files(){
+  lb_check_args_num "${@}" 1
+  count=0
+  for i in ${1}; do
+    [ -f "${i}" ] && ((count++))
+  done
+  printf '%s\n' "${count}"
 }
