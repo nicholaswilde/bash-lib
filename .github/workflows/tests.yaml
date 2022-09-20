@@ -14,6 +14,7 @@ on:  # yamllint disable-line rule:truthy
       - 'test/**'
       - 'all'
       - 'checks'
+      - 'conv'
       - 'file'
       - 'git'
       - 'helpers'
