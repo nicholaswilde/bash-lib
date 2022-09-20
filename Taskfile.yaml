@@ -6,8 +6,19 @@ version: '3'
 vars:
   BATS: ./test/bats/bin/bats
   PORT: 8000
+  LEVEL: minor
 
 tasks:
+  semver-inc:
+    desc: Increment using semver with LEVEL
+    silent: true
+    cmds:
+      - |-
+        tag=$(git tag|tail -n1 |sed 's/v//')
+        printf 'latest tag: v%s\n' "${tag}"
+        newtag=v$(docker run --rm alpine/semver semver -i {{ .LEVEL }} "${tag}")
+        printf 'new tag: %s\n' "${newtag}"
+        git tag "${newtag}"
   commit-lib:
     desc: Commit a new LIB
     cmds:
