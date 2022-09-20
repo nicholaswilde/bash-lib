@@ -91,6 +91,9 @@ tasks:
       - task: new-test
         vars:
           TEST: "{{ .LIB }}"
+      - task: new-doc
+        vars:
+          DOC: "{{ .LIB }}"
   serve:
     desc: >-
       Start development server on http://0.0.0.0:{{ .PORT }} using
