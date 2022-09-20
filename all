@@ -1,10 +1,22 @@
 #!/usr/bin/env bash
 : "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
 
-# Load all files
-for file in "${LIBBASH_DIR}"/{file,str,logging,checks,script,git,url}; do
-  if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+libs=()
+# Get an array of all libraries
+for f in "${LIBBASH_DIR}"/*; do
+  [[ -f "${f}" ]] && \
+  [[ "${f}" != *"init" ]] && \
+  [[ "${f}" != *"all" ]] && \
+  [[ "${f}" != *"helpers" ]] && \
+  [[ "${f}" != *"logging" ]] && \
+  [[ $(\head "${f}" -n1) == "#!/usr/bin/env bash" ]] && \
+    libs+=("${f}")
+done
+
+# Load all libraries
+for lib in "${libs[@]}"; do
+  if [[ -r "${lib}" ]] && [[ -f "${lib}" ]]; then
     # shellcheck source=/dev/null
-    source "$file"
+    source "${lib}"
   fi
 done
