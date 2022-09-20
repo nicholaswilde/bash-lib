@@ -11,7 +11,7 @@ tasks:
   commit-lib:
     desc: Commit a new LIB
     cmds:
-      - "git add {{ .LIB }} ./examples/{{ .LIB }}.sh ./test/{{ .LIB }}.bats ./docs/libraries/{{ .LIB }}.md"
+      - "git add {{ .LIB }} ./examples/{{ .LIB }}.sh ./test/{{ .LIB }}.bats ./docs/libraries/{{ .LIB }}.md ./mkdocs.yml"
       - "git commit -m \"feat: add {{ .LIB }}\""
   commit-func:
     desc: Commit a new FUNC in a LIB
