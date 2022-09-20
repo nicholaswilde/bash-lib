@@ -46,6 +46,7 @@ nav:
       - file: libraries/file.md
       - helpers: libraries/helpers.md
       - logging: libraries/logging.md
+      - other: libraries/other.md
       - script: libraries/script.md
       - str: libraries/str.md
       - url: libraries/url.md

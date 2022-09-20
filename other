@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+function lb_gen_uuid() {
+  C="89ab"
+  for ((N=0;N<16;++N)); do
+    B="$((RANDOM%256))"
+    case "$N" in
+      6)        printf '4%x' "$((B%16))" ;;
+      8)        printf '%c%x' "${C:$RANDOM%${#C}:1}" "$((B%16))" ;;
+      3|5|7|9)  printf '%02x-' "$B";;
+      *)        printf '%02x' "$B";;
+    esac
+  done
+  printf '\n'
+}
+
+function lb_read_sleep() {
+  lb_check_args_num "${@}" 1
+  read -rt "${1}" <> <(:) || :
+}
+
+function lb_bkr() {
+  ((${#@} == 0)) && lb_fail "expected at least 1 arg but got 0"
+  (nohup "$@" &>/dev/null &)
+}
