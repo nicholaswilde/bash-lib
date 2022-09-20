@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+: "${LIBBASH_DIR:?LIBBASH_DIR must be set. Please source libbash/init before other libraries.}"
+
+#------------------------------ Global Variables ------------------------------
+
+#------------------------------ Private Functions -----------------------------
+
+#------------------------------ Public Functions ------------------------------
+
+function lb_hex_to_rgb() {
+  lb_check_args_num "${@}" 1
+  : "${1/\#}"
+  ((r=16#${_:0:2},g=16#${_:2:2},b=16#${_:4:2}))
+  printf '%s\n' "$r $g $b"
+}
+
+function lb_rgb_to_hex() {
+  lb_check_args_num "${@}" 3
+  printf '#%02x%02x%02x\n' "$1" "$2" "$3"
+}

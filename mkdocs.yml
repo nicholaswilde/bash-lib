@@ -41,6 +41,7 @@ nav:
       - init: libraries/init.md
       - all: libraries/all.md
       - checks: libraries/checks.md
+      - conv: libraries/conv.md
       - git: libraries/git.md
       - file: libraries/file.md
       - helpers: libraries/helpers.md
