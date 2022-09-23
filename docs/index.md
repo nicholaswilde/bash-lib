@@ -29,8 +29,10 @@ A collection of common bash libraries.
 ```shell title="myscript.sh"
 #!/usr/bin/env bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 # shellcheck source=/dev/null
-source ./libbash/init
+source "${DIR}/libbash/init"
 source "${LIBBASH_DIR}/str"
 
 lb_to_upper_all foo

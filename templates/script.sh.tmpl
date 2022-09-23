@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 # shellcheck source=/dev/null
-source ./libbash/init
+source "${DIR}/libbash/init"
 # source "${LIBBASH_DIR}/all"
 # source "${LIBBASH_DIR}/str"
 # source "${LIBBASH_DIR}/file"
 # source "${LIBBASH_DIR}/checks"
 # source "${LIBBASH_DIR}/script"
+# source "${LIBBASH_DIR}/git"
+# source "${LIBBASH_DIR}/url"
+# source "${LIBBASH_DIR}/other"
+# source "${LIBBASH_DIR}/conv"
 
 function main() {
   echo "${@}"

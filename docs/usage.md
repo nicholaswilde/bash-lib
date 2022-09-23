@@ -15,8 +15,10 @@
     ```shell title="myscript.sh"
     #!/usr/bin/env bash
 
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
     # shellcheck source=/dev/null
-    source ./libbash/init
+    source "${DIR}/libbash/init"
     source "${LIBBASH_DIR}/logging"
 
     lb_infoln "infoln test"
@@ -30,7 +32,9 @@ Environmental variables are used to set some options for the library. They can b
     ```shell
     #!/usr/bin/env bash
 
-    source ./libbash/init
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+    source "${DIR}/libbash/init"
     source ${LIBBASH_DIR}/script
     FOO=BAR
     ...
@@ -40,7 +44,7 @@ Environmental variables are used to set some options for the library. They can b
     ```shell
     FOO=BAR ./myscript.sh
     ```
-    
+
 === "Environment"
     ```shell
     FOO=BAR
